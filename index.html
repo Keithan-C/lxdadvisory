@@ -3,155 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LXD Advisory</title>
+    <title>LXD Advisory | AI Compliance Training</title>
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
+        /* General Styles */
         body {
-            background: #0f111a;
-            color: #fff;
-            line-height: 1.6;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0b0d17;
+            color: #ffffff;
+            scroll-behavior: smooth;
         }
 
         a {
+            color: inherit;
             text-decoration: none;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            background: #111827;
-            padding: 1rem 2rem;
-            top: 0;
-            left: 0;
-            z-index: 999;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        h1, h2, h3 {
+            margin: 0;
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            color: #00d9ff;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 2rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #00d9ff;
+        section {
+            padding: 80px 20px;
+            text-align: center;
         }
 
         /* Hero Section */
-        header {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 2rem;
-            background: linear-gradient(to right, #0f111a, #111827);
+        .hero {
+            background: linear-gradient(135deg, #00d9ff, #0066ff);
+            color: #fff;
+            padding: 120px 20px;
         }
 
-        header h1 {
+        .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: #00d9ff;
         }
 
-        header p {
+        .hero p {
             font-size: 1.2rem;
-            color: #a8b3cc;
-            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .hero a {
+            background-color: #ffffff;
+            color: #0066ff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #00d9ff;
+            color: #fff;
         }
 
         /* Knowledge Section */
-        .knowledge {
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .section-title {
+        .knowledge h2 {
             font-size: 2.5rem;
             color: #00d9ff;
             margin-bottom: 1rem;
         }
 
-        .section-subtitle {
-            max-width: 700px;
-            margin: 0 auto 3rem;
+        .knowledge p {
             color: #a8b3cc;
             font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
         }
 
-        .knowledge-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
+        .knowledge-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
         .knowledge-card {
-            background: #111827;
-            padding: 2rem;
+            background-color: #12152b;
+            padding: 20px;
             border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 280px;
+            transition: 0.3s;
         }
 
         .knowledge-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+            box-shadow: 0 0 15px #00d9ff;
         }
 
         .knowledge-card h3 {
-            color: #ffffff;
-            margin-bottom: 1rem;
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
         }
 
         .knowledge-card p {
+            font-size: 0.95rem;
             color: #a8b3cc;
-            margin-bottom: 1.5rem;
         }
 
-        .knowledge-link {
+        /* Services Section */
+        .services h2 {
+            font-size: 2.5rem;
             color: #00d9ff;
-            text-decoration: none;
-            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .knowledge-link:hover {
-            text-decoration: underline;
+        .services p {
+            color: #a8b3cc;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #12152b;
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px #00d9ff;
+        }
+
+        .service-card h3 {
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card ul {
+            text-align: left;
+            padding-left: 20px;
+            color: #a8b3cc;
+        }
+
+        /* Resources Section */
+        .resources h2 {
+            font-size: 2.5rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
+        }
+
+        .resources p {
+            color: #a8b3cc;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .resource-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .resource-card {
+            background-color: #12152b;
+            padding: 20px;
+            border-radius: 12px;
+            width: 280px;
+            transition: 0.3s;
+        }
+
+        .resource-card h3 {
+            color: #00d9ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 8px 16px;
+            background-color: #00d9ff;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .resource-card a:hover {
+            background-color: #ffffff;
+            color: #0066ff;
         }
 
         /* Contact Section */
-        .contact {
-            padding: 80px 20px;
-            text-align: center;
-            background: #111827;
-        }
-
         .contact h2 {
             font-size: 2.5rem;
             color: #00d9ff;
@@ -159,92 +206,117 @@
         }
 
         .contact p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
             color: #a8b3cc;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
         .contact a {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: #00d9ff;
-            color: #0f111a;
-            border-radius: 8px;
+            background-color: #00d9ff;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: background 0.3s ease;
+            transition: 0.3s;
         }
 
         .contact a:hover {
-            background: #00b5e0;
+            background-color: #ffffff;
+            color: #0066ff;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111827;
-            color: #a8b3cc;
-            font-size: 0.9rem;
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .knowledge-cards, .service-cards, .resource-cards {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">LXD Advisory</div>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#knowledge">Knowledge</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <!-- Hero Section -->
-    <header id="hero">
+    <section class="hero" id="hero">
         <h1>LXD Advisory</h1>
-        <p>Delivering insights and advisory perspectives on AI, cybersecurity, and emerging tech for leaders and decision-makers.</p>
-    </header>
+        <p>Learning Experience Design for Automotive R&D; Teams — Output-driven AI compliance training for EU AI Act Article 4</p>
+        <a href="#contact">Book a Consultation</a>
+    </section>
 
-    <!-- Knowledge Section -->
-    <section id="knowledge" class="knowledge">
-        <h2 class="section-title">Knowledge Hub</h2>
-        <p class="section-subtitle">Insights, research, and advisory perspectives on AI policy, cybersecurity, and emerging technology in national security and automotive systems.</p>
-        <div class="knowledge-grid">
+    <!-- Knowledge Hub Section -->
+    <section class="knowledge" id="knowledge">
+        <h2>Knowledge Hub</h2>
+        <p>Empowering automotive teams to navigate AI compliance with confidence. Build audit-ready documentation while learning practical methodology.</p>
+        <div class="knowledge-cards">
             <div class="knowledge-card">
-                <h3>EU AI Act</h3>
-                <p>Practical analysis of regulatory implications for automotive, ADAS systems, and infrastructure stakeholders.</p>
-                <a href="#" class="knowledge-link">Explore →</a>
+                <h3>AI Literacy</h3>
+                <p>Understand high-risk AI capabilities, limitations, and documentation requirements under EU AI Act Article 4.</p>
             </div>
             <div class="knowledge-card">
-                <h3>Cyber & Sovereignty</h3>
-                <p>AI and cybersecurity at the intersection of national defense, resilience, and technological sovereignty.</p>
-                <a href="#" class="knowledge-link">Explore →</a>
+                <h3>Logging & Documentation</h3>
+                <p>Learn how to create structured, audit-ready logs for ADAS and connected vehicle AI systems.</p>
             </div>
             <div class="knowledge-card">
-                <h3>Edge AI Systems</h3>
-                <p>Where real-world AI adoption is happening today — practical deployments at the edge.</p>
-                <a href="#" class="knowledge-link">Explore →</a>
+                <h3>Compliance in Action</h3>
+                <p>Practical, output-driven exercises that result in immediate deliverables for your R&D; team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>AI Compliance Training Services</h2>
+        <p>Specialized output-driven training for automotive R&D; teams to achieve EU AI Act compliance while building internal capability.</p>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Pilot Program (3 weeks)</h3>
+                <ul>
+                    <li>Half-day sessions over 3 weeks</li>
+                    <li>Risk Assessment Log (2-3 AI systems)</li>
+                    <li>Technical Documentation (audit-ready)</li>
+                    <li>Human Oversight Protocol</li>
+                    <li>Audit Defense Brief</li>
+                    <li>Pricing: €9,500–15,000</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Full Program (6 weeks)</h3>
+                <ul>
+                    <li>2–3 sessions per week</li>
+                    <li>Documentation for 10–15 AI systems</li>
+                    <li>Comprehensive risk management framework</li>
+                    <li>Full audit preparation package</li>
+                    <li>Pricing: €45,000–65,000</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Train-the-Trainer Program (4 weeks)</h3>
+                <ul>
+                    <li>Certified internal trainers</li>
+                    <li>Licensed methodology and materials</li>
+                    <li>6 months ongoing support</li>
+                    <li>Pricing: €28,000–35,000</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources" id="resources">
+        <h2>Resources</h2>
+        <p>Download practical guides and checklists for automotive AI compliance.</p>
+        <div class="resource-cards">
+            <div class="resource-card">
+                <h3>EU AI Act Automotive Checklist</h3>
+                <a href="downloads/EU_AI_Act_Checklist.pdf" download>Download PDF</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <h2>Contact</h2>
-        <p>Reach out to discuss advisory services, collaboration opportunities, or any questions you have about AI, cybersecurity, and emerging tech.</p>
+        <p>Interested in AI compliance training for your R&D; team? Book a consultation or request a proposal today.</p>
         <a href="mailto:contact@lxdadvisory.com">Email Us</a>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 LXD Advisory. All Rights Reserved.
-    </footer>
-
 </body>
 </html>
