@@ -2,183 +2,145 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LXD Advisory | EU AI Act Article 12/19 Infrastructure</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <title>LXD Advisory — AI Compliance Training for Automotive Teams</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #00d9ff, #0066ff);
+            padding: 100px 20px 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background-color: #ffffff;
+            color: #0066ff;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #00d9ff;
+            color: #fff;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #00d9ff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        p {
+            max-width: 800px;
+            margin: 0 auto 1rem auto;
+            text-align: center;
+        }
+        .resource-card {
+            background-color: #1a1a2e;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: center;
+        }
+        .resource-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #00d9ff;
+            color: #fff;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .resource-card a:hover {
+            background-color: #ffffff;
+            color: #0066ff;
+        }
+        footer {
+            background-color: #0a0a14;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- HERO SECTION -->
+    <header>
+        <h1>LXD Advisory</h1>
+        <p>Hands-on AI Compliance Training for Automotive & ADAS Teams — EU AI Act Articles 12 & 19</p>
+        <p><strong>Deadline: August 2, 2026 — 166 days remaining</strong></p>
+        <a class="cta-button" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Your 21-Day Architecture Jam</a>
+    </header>
 
-<header class="navbar">
-    <div class="container nav-container">
-        <div class="logo">LXD Advisory</div>
-        <nav>
-            <a href="#problem">The Problem</a>
-            <a href="#architecture-jam">Architecture Jam</a>
-            <a href="#resources">Tools</a>
-            <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" class="btn-nav">
-                Book Architecture Jam
-            </a>
-        </nav>
-    </div>
-</header>
+    <!-- ABOUT TRAINING -->
+    <section id="training">
+        <h2>Why LXD Advisory?</h2>
+        <p>We teach engineering teams to create <strong>audit-ready compliance artifacts</strong> themselves. Using Learning Experience Design (LXD) principles, our hands-on sessions ensure your team leaves with tangible, operational results.</p>
+        <p>Our programs are <strong>output-driven</strong>, not slide decks — participants produce the real deliverables needed for Article 12 & 19 compliance.</p>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="container hero-content">
-        <h1>EU AI Act Articles 12 & 19 Infrastructure for ADAS Teams</h1>
-
-        <p>
-            Automotive OEMs and Tier-1 suppliers must make AI systems audit-ready by 
-            <strong>August 2, 2026</strong>.
-            Most ADAS platforms lack structured logging schemas, traceability layers,
-            and Article 12/19 technical defense artifacts.
-        </p>
-
-        <div class="deadline">
-            Enforcement Deadline: August 2, 2026
-        </div>
-
-        <div class="hero-buttons">
-            <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap"
-               target="_blank"
-               class="btn-primary">
-               Book 21-Day Architecture Jam
-            </a>
-
-            <a href="#resources" class="btn-secondary">
-               View Article 12/19 Tools
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- PROBLEM -->
-<section id="problem" class="section light">
-    <div class="container narrow">
-        <h2>Most ADAS Platforms Are Not Article 12/19 Ready</h2>
-
-        <ul>
-            <li>No defined logging schema aligned to Article 12</li>
-            <li>No structured traceability for Article 19 audit defense</li>
-            <li>No regulator-ready documentation artifacts</li>
-            <li>Infrastructure not designed for inspection or reproducibility</li>
+    <!-- SERVICES / ARCHITECTURE JAM -->
+    <section id="services">
+        <h2>21-Day Architecture Jam</h2>
+        <p>Three half-day sessions over 21 days, designed to enable your R&D team to:</p>
+        <ul style="max-width: 700px; margin: auto; padding: 0; list-style-position: inside;">
+            <li>Create Logging Schemas for AI systems</li>
+            <li>Develop Risk Assessment Logs & Human Oversight Protocols</li>
+            <li>Produce Audit Defense Briefs ready for submission</li>
         </ul>
+        <p>Format: Online, interactive, hands-on guidance from an LXD expert.</p>
+        <a class="cta-button" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Your Jam</a>
+    </section>
 
-        <p>
-            Regulation requires infrastructure — not slide decks.
-        </p>
-    </div>
-</section>
-
-<!-- ARCHITECTURE JAM -->
-<section id="architecture-jam" class="section">
-    <div class="container">
-        <h2>The 21-Day Architecture Jam</h2>
-        <p class="center">
-            Three structured half-day engineering sessions. Artifact-driven. Output-focused.
-        </p>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Article 12 Logging Schema</h3>
-                <p>
-                    Defined event taxonomy, retention logic,
-                    system traceability mappings, and logging requirements
-                    aligned to EU AI Act technical obligations.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Article 19 Audit Defense Brief</h3>
-                <p>
-                    Structured documentation package prepared for regulator inspection,
-                    demonstrating compliance readiness and technical controls.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Infrastructure Implementation Specification</h3>
-                <p>
-                    Architecture blueprint aligned with ASPICE L3 workflows,
-                    enabling engineering execution without ambiguity.
-                </p>
-            </div>
+    <!-- KNOWLEDGE HUB / RESOURCES -->
+    <section id="resources">
+        <h2>Knowledge Hub & Resources</h2>
+        <div class="resource-card">
+            <h3>Executive Guide to Automotive AI Compliance 2026</h3>
+            <p>Step-by-step methodology to prepare your team for Articles 12 & 19 compliance.</p>
+            <a href="https://github.com/Keithan-C/The-Executive-Guide-to-Automotive-AI-Compliance-2026-/blob/main/README.md" target="_blank">View Guide on GitHub</a>
         </div>
-
-        <div class="center" style="margin-top:40px;">
-            <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap"
-               target="_blank"
-               class="btn-primary">
-               Start Architecture Jam
-            </a>
+        <div class="resource-card">
+            <h3>AI Act Article 12 & 19 Checklist</h3>
+            <p>Hands-on checklist to track your team’s compliance readiness.</p>
+            <a href="https://github.com/Keithan-C/ai-act-article-12-19-checklist/" target="_blank">Access Checklist</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- RESOURCES -->
-<section id="resources" class="section light">
-    <div class="container">
-        <h2>Article 12/19 Engineering Tools</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Executive Guide to Automotive AI Compliance 2026</h3>
-                <p>
-                    Strategic interpretation of the EU AI Act
-                    for automotive engineering leadership.
-                </p>
-                <a href="https://keithan-c.github.io/The-Executive-Guide-to-Automotive-AI-Compliance-2026-/"
-                   target="_blank"
-                   class="btn-primary small">
-                   Open Guide
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>EU AI Act Articles 12–19 Compliance Checklist</h3>
-                <p>
-                    Practical infrastructure readiness checklist
-                    for ADAS and autonomous driving systems.
-                </p>
-                <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/"
-                   target="_blank"
-                   class="btn-primary small">
-                   Open Checklist
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- URGENCY -->
-<section class="section dark">
-    <div class="container narrow center">
-        <h2>The Window Is Closing</h2>
-        <p>
-            A 21-day pilot started today finishes months before enforcement.
-            Waiting compresses architecture timelines and increases regulatory risk.
-        </p>
-
-        <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap"
-           target="_blank"
-           class="btn-primary">
-           Book Architecture Jam
-        </a>
-    </div>
-</section>
-
-<footer>
-    <div class="container center">
-        <p>© 2026 LXD Advisory. EU AI Act Infrastructure Advisory for Automotive Engineering Teams.</p>
-    </div>
-</footer>
-
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 LXD Advisory by Keithan | <a href="https://www.linkedin.com/in/keithan-cokbilir/" target="_blank">LinkedIn</a></p>
+    </footer>
 </body>
 </html>
