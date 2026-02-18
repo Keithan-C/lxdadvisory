@@ -1,153 +1,144 @@
-/* Reset defaults */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #0b0c1a;
-    color: #e0e0e0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
     line-height: 1.6;
 }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, #000c1a 0%, #00142f 100%);
-    padding: 3rem 1rem;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.narrow {
+    max-width: 700px;
+}
+
+.center {
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-header h1 {
-    color: #00d9ff;
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+.navbar {
+    background: #0f172a;
+    padding: 20px 0;
+    border-bottom: 1px solid #1e293b;
 }
 
-header p {
-    color: #a8b3cc;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #cbd5e1;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #38bdf8;
+}
+
+.logo {
+    font-weight: 700;
     font-size: 1.2rem;
 }
 
-/* Sections */
-section {
-    padding: 80px 20px;
+.hero {
+    padding: 120px 0;
     text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #94a3b8;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.light {
+    background: #111827;
+}
+
+.dark {
+    background: #020617;
 }
 
 h2 {
-    font-size: 2.8rem;
-    color: #00d9ff;
-    margin-bottom: 1rem;
-    position: relative;
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
-h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #00d9ff;
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-p {
-    color: #c0c0c0;
-    font-size: 1.1rem;
-    max-width: 850px;
-    margin: 0 auto 1.5rem;
-}
-
-/* Cards */
-.service-card,
-.resource-card {
-    background-color: #11142d;
+.card {
+    background: #1e293b;
+    padding: 30px;
     border-radius: 10px;
-    padding: 25px;
-    margin: 25px auto;
-    max-width: 500px;
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
-.service-card:hover,
-.resource-card:hover {
+.card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
-.service-card h3,
-.resource-card h3 {
-    color: #00d9ff;
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
+.card h3 {
+    margin-top: 0;
 }
 
-.service-card p,
-.resource-card p {
-    font-size: 1rem;
-    color: #c0c0c0;
-}
-
-/* Buttons / Links */
-.service-card a,
-.resource-card a,
-.cta-button {
+.btn-primary {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 12px 24px;
-    background-color: #00d9ff;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 12px 22px;
+    background: #38bdf8;
+    color: #0f172a;
     text-decoration: none;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    border-radius: 6px;
 }
 
-.service-card a:hover,
-.resource-card a:hover,
-.cta-button:hover {
-    background-color: #fff;
-    color: #0066ff;
-    transform: scale(1.05);
+.btn-primary:hover {
+    background: #0ea5e9;
 }
 
-/* Contact / CTA section */
-#contact {
-    background: linear-gradient(135deg, #00142f, #000c1a);
-    padding: 100px 20px;
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-left: 10px;
 }
 
-#contact p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+.btn-secondary:hover {
+    background: #38bdf8;
+    color: #0f172a;
 }
 
-/* Footer */
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #000c1a;
-    color: #a8b3cc;
+.small {
+    padding: 8px 16px;
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    .service-card,
-    .resource-card {
-        max-width: 90%;
-        padding: 20px;
-    }
+footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    background: #020617;
 }
