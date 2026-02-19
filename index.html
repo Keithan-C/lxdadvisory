@@ -183,4 +183,363 @@
     .deliverable-list {
         background: #141920;
         border-left: 4px solid #00d4ff;
-        paddi
+        padding: 30px 40px;
+        margin: 40px auto;
+        max-width: 700px;
+        text-align: left;
+    }
+    
+    .deliverable-list h3 {
+        text-align: left;
+        margin-bottom: 20px;
+        color: #00d4ff;
+    }
+    
+    .deliverable-list ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .deliverable-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        color: #b8b8b8;
+    }
+    
+    .deliverable-list li:last-child {
+        border-bottom: none;
+    }
+    
+    .deliverable-list li::before {
+        content: "→ ";
+        color: #00d4ff;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    
+    /* RESOURCES */
+    .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+    
+    .resource-card {
+        background: #141920;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        transition: 0.3s;
+    }
+    
+    .resource-card:hover {
+        border-color: rgba(0, 212, 255, 0.4);
+        transform: translateY(-3px);
+    }
+    
+    .resource-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .resource-card p {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .resource-card .badge {
+        display: inline-block;
+        background: rgba(0, 212, 255, 0.15);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        color: #00d4ff;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-family: 'Courier New', monospace;
+        letter-spacing: 0.05em;
+        margin-bottom: 15px;
+    }
+    
+    .resource-card a {
+        display: inline-block;
+        padding: 12px 24px;
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid #00d4ff;
+        color: #00d4ff;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 0.9rem;
+    }
+    
+    .resource-card a:hover {
+        background: rgba(0, 212, 255, 0.2);
+    }
+    
+    /* SOCIAL PROOF */
+    .testimonial {
+        background: #141920;
+        border-left: 4px solid #00d4ff;
+        padding: 30px 40px;
+        margin: 40px auto;
+        max-width: 700px;
+        font-style: italic;
+        position: relative;
+    }
+    
+    .testimonial::before {
+        content: '"';
+        font-size: 4rem;
+        color: rgba(0, 212, 255, 0.2);
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-family: Georgia, serif;
+    }
+    
+    .testimonial p {
+        text-align: left;
+        margin-bottom: 15px;
+        padding-left: 30px;
+    }
+    
+    .testimonial-author {
+        text-align: right;
+        font-size: 0.9rem;
+        color: #888;
+        font-style: normal;
+    }
+    
+    .testimonial-author strong {
+        color: #00d4ff;
+    }
+    
+    /* URGENCY */
+    .urgency-section {
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 8px;
+        padding: 40px 30px;
+        margin: 50px auto;
+        max-width: 800px;
+        text-align: center;
+    }
+    
+    .urgency-section h3 {
+        color: #fca5a5;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .urgency-section p {
+        color: #d0d0d0;
+    }
+    
+    .countdown {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #ef4444;
+        margin: 20px 0;
+        font-family: 'Courier New', monospace;
+    }
+    
+    /* FOOTER */
+    footer {
+        background: #0a0a14;
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    footer a {
+        color: #00d4ff;
+        text-decoration: none;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        header h1 { font-size: 2rem; }
+        .hero-stat { display: block; margin: 15px 0; }
+        .cta-primary, .cta-secondary { display: block; margin: 15px auto; max-width: 300px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+    <div class="deadline-banner">⚠ ENFORCEMENT: AUGUST 2, 2026 — 159 DAYS REMAINING</div>
+    <h1>
+        We Don't Train Teams on the AI Act.
+        <span class="highlight">We Run Production Sprints That Generate It.</span>
+    </h1>
+    <p>ADAS engineering teams generate JSON schemas and Technical Files for EU AI Act Articles 12 & 19 — in 21 days. Not slide decks. Not homework. Production artifacts.</p>
+    
+    <div style="margin: 30px 0 20px 0;">
+        <div class="hero-stat"><strong>21</strong>DAY SPRINT</div>
+        <div class="hero-stat"><strong>0</strong>R&D DELAY</div>
+        <div class="hero-stat"><strong>100%</strong>ARTIFACTS</div>
+    </div>
+    
+    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Architecture Jam →</a>
+    <a class="cta-secondary" href="#resources">Free Tools & Templates</a>
+</header>
+
+<!-- THE PROBLEM -->
+<section>
+    <h2>The Compliance Infrastructure Gap</h2>
+    <p>Most ADAS teams think they're compliant because they "have logs."</p>
+    <p>But Article 12 doesn't ask if you log data. It asks: <strong>"Show me your logging schema that maps to Article 12 requirements."</strong></p>
+    <p>That schema doesn't exist. Your infrastructure team is waiting for ADAS to define it. ADAS is waiting for compliance to define it. Nobody's building it.</p>
+    <p><strong>159 days until enforcement. The gap won't close itself.</strong></p>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section style="background: #0d1117; padding: 60px 20px;">
+    <h2>What Gets Generated in 21 Days</h2>
+    <p>This isn't training. It's a <strong>Production Sprint</strong> that generates version-controlled code artifacts your systems consume programmatically.</p>
+    
+    <div class="deliverable-list">
+        <h3>Production Artifacts (Version-Controlled)</h3>
+        <ul>
+            <li>logging_schema_v1.0.json — Article 12-compliant, machine-readable</li>
+            <li>article_12_technical_file.xml — EU-required format, auto-generated</li>
+            <li>esim_configuration.yaml — Infrastructure-as-Code for eSIM/ACSP</li>
+            <li>compliance_validator.py — Automated pre-deployment checks</li>
+            <li>human_oversight_protocol.json — Article 14 procedures as config</li>
+            <li>audit_defense_brief.md — Auto-generated from schema annotations</li>
+        </ul>
+    </div>
+    
+    <p style="margin-top: 30px;">These integrate directly into your CI/CD pipeline. When your ADAS model version increments, your schemas update automatically.</p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+    <h2>The 21-Day Production Sprint</h2>
+    
+    <div class="value-grid">
+        <div class="value-card">
+            <span class="value-icon">📐</span>
+            <h3>Week 1: Schema Generation</h3>
+            <p>Your ADAS team generates baseline JSON schema for Article 12. Define data types, field mappings, retention policies as code. Initialize Technical File structure in your repo.</p>
+        </div>
+        
+        <div class="value-card">
+            <span class="value-icon">🔧</span>
+            <h3>Week 2: Validation & Refinement</h3>
+            <p>Iterate schema based on mock audit feedback. Add validation rules. Generate Article 19 log control policies as configuration. Build automated compliance checks.</p>
+        </div>
+        
+        <div class="value-card">
+            <span class="value-icon">🚀</span>
+            <h3>Week 3: CI/CD Integration</h3>
+            <p>Integrate schemas into deployment pipeline. Configure eSIM/ACSP to consume schemas programmatically. Generate Technical Files automatically from schema annotations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section style="background: #0a0d12;">
+    <h2>What Engineering Heads Say</h2>
+    
+    <div class="testimonial">
+        <p>"LXD Advisory didn't just train our team — they built the methodology we now use across our entire ADAS portfolio. Three weeks to audit-ready documentation. We expected a course. We got a capability."</p>
+        <div class="testimonial-author">— <strong>VP Engineering</strong>, Tier-1 Automotive Supplier, Germany</div>
+    </div>
+    
+    <div class="testimonial">
+        <p>"We had ASPICE L3 in place but no idea how it mapped to the AI Act. The mapping engagement showed us we were 60% there already. We built only the delta. Saved us months."</p>
+        <div class="testimonial-author">— <strong>Chief Architect</strong>, Automotive AI Startup, Munich</div>
+    </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section id="resources">
+    <h2>Free Tools & Templates</h2>
+    <p>Prove to yourself we understand the technical depth before booking anything.</p>
+    
+    <div class="resource-grid">
+        <div class="resource-card">
+            <div class="badge">INTERACTIVE TOOL</div>
+            <h3>Article 12/19 Readiness Scorecard</h3>
+            <p>10-question diagnostic for OTA infrastructure teams. Instant score, gap analysis, recommended action plan. 3 minutes.</p>
+            <a href="https://keithan-c.github.io/scorecard/" target="_blank">Take the Scorecard →</a>
+        </div>
+        
+        <div class="resource-card">
+            <div class="badge">LIVING CHECKLIST</div>
+            <h3>Compliance Tracker</h3>
+            <p>46-item interactive checklist for infrastructure and ADAS teams. Progress saves automatically. Flag blockers. Export status.</p>
+            <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/" target="_blank">Access Checklist →</a>
+        </div>
+        
+        <div class="resource-card">
+            <div class="badge">GITHUB TEMPLATE</div>
+            <h3>ADAS Logging Schema</h3>
+            <p>Article 12-compliant logging schema template. Maps each data field to specific compliance requirements. Fork and customize.</p>
+            <a href="https://github.com/Keithan-C/The-Executive-Guide-to-Automotive-AI-Compliance-2026-" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
+</section>
+
+<!-- URGENCY -->
+<section>
+    <div class="urgency-section">
+        <h3>The Window Is Closing</h3>
+        <div class="countdown" id="countdown">159 DAYS</div>
+        <p>A 21-day sprint started today finishes mid-March. That leaves ~4.5 months to scale to other teams and complete documentation across your systems portfolio.</p>
+        <p><strong>Teams that started in Q4 2025 are finishing now. Everyone else is behind.</strong></p>
+        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" style="margin-top: 25px;">Book Your Sprint Slot →</a>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="text-align: center; padding: 80px 20px;">
+    <h2>Book an Architecture Jam</h2>
+    <p>30-minute session for Engineering Heads and Chief Architects. We map your AI systems against Articles 12, 14, and 19 — and show you exactly where the gaps are.</p>
+    <p>No deck. No sales pitch. Just architecture.</p>
+    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" style="font-size: 1.1rem; padding: 20px 50px;">Book Architecture Jam →</a>
+    <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">Or email: <a href="mailto:hello@lxdadvisory.de" style="color: #00d4ff;">hello@lxdadvisory.de</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 LXD Advisory | EU AI Act Article 12 & 19 Compliance Methodology</p>
+    <p><a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank">LinkedIn</a> | 
+    <a href="https://github.com/Keithan-C" target="_blank">GitHub</a> | 
+    <a href="mailto:hello@lxdadvisory.de">Email</a></p>
+    <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">August 2, 2026 enforcement deadline · <span id="footer-days">159</span> days remaining</p>
+</footer>
+
+<script>
+// Countdown update
+function updateCountdown() {
+    const deadline = new Date('2026-08-02');
+    const now = new Date();
+    const days = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+    
+    const countdownEl = document.getElementById('countdown');
+    const footerDaysEl = document.getElementById('footer-days');
+    
+    if (countdownEl) countdownEl.textContent = days + ' DAYS';
+    if (footerDaysEl) footerDaysEl.textContent = days;
+}
+
+updateCountdown();
+</script>
+
+</body>
+</html>
