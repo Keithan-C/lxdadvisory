@@ -50,6 +50,8 @@ Create a `compliance.json` in your project root. This file acts as the "Source o
   "logging": {
     "retention_days": 30,
     "storage_endpoint": "[https://api.lxdadvisory.de/v1/audit](https://api.lxdadvisory.de/v1/audit)"
+ }
+}
 
 2. Wrap Your Model
 
@@ -86,5 +88,4 @@ Email: hello@keithan.eu
 
 © 2026 LXD Advisory — Munich, Germany.
 
-  }
-}
+
