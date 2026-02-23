@@ -354,7 +354,7 @@
     footer {
         background: #0a0a14;
         text-align: center;
-        padding: 40px 20px;
+        padding: 40px 20px 60px 20px;
         font-size: 0.9rem;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -368,11 +368,29 @@
         text-decoration: underline;
     }
     
+    .disclaimer-text {
+        max-width: 900px;
+        margin: 30px auto 10px auto;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: #888;
+        text-align: left;
+    }
+    
+    .disclaimer-text strong {
+        color: #00d4ff;
+    }
+    
     /* RESPONSIVE */
     @media (max-width: 768px) {
         header h1 { font-size: 2rem; }
         .hero-stat { display: block; margin: 15px 0; }
         .cta-primary, .cta-secondary { display: block; margin: 15px auto; max-width: 300px; }
+        .disclaimer-text { font-size: 0.75rem; padding: 15px; }
     }
 </style>
 </head>
@@ -512,7 +530,7 @@
     <p>30-minute session for Engineering Heads and Chief Architects. We map your AI systems against Articles 12, 14, and 19 — and show you exactly where the gaps are.</p>
     <p>No deck. No sales pitch. Just architecture.</p>
     <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" style="font-size: 1.1rem; padding: 20px 50px;">Book Architecture Jam →</a>
-    <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">Or email: <a href="mailto:hello@lxdadvisory.de" style="color: #00d4ff;">hello@lxdadvisory.de</a></p>
+    <p style="margin-top: 20px; font-size: 0.9rem; color: #888;">Or email: <a href="mailto:hello@keithan.eu" style="color: #00d4ff;">hello@keithan.eu</a></p>
 </section>
 
 <!-- FOOTER -->
@@ -520,7 +538,13 @@
     <p>&copy; 2026 LXD Advisory | EU AI Act Article 12 & 19 Compliance Methodology</p>
     <p><a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank">LinkedIn</a> | 
     <a href="https://github.com/Keithan-C" target="_blank">GitHub</a> | 
-    <a href="mailto:hello@lxdadvisory.de">Email</a></p>
+    <a href="mailto:hello@keithan.eu">Email</a></p>
+    
+    <!-- LEGAL DISCLAIMER -->
+    <div class="disclaimer-text">
+        <strong>Disclaimer:</strong> The information provided on this website is for general informational purposes only and does not constitute legal, regulatory, or professional compliance advice. LXD Advisory is not a law firm and does not provide legal services. Our services relate to compliance methodology, technical implementation, and engineering best practices. For specific legal or regulatory compliance questions, consult a qualified attorney or regulatory expert in your jurisdiction. We do not certify, audit, or guarantee regulatory compliance outcomes. Services are provided "as is" without warranties. See our full <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a> for details.
+    </div>
+    
     <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">August 2, 2026 enforcement deadline · <span id="footer-days">159</span> days remaining</p>
 </footer>
 
