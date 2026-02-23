@@ -57,7 +57,6 @@ Create a `compliance.json` in your project root. This file acts as the "Source o
 
 LXD provides lightweight wrappers for Python and TypeScript to intercept and validate model I/O against your contract.
 
-Python
 from lxd_wrapper import ComplianceGuard
 
 # Initialize with your schema
@@ -65,6 +64,7 @@ guard = ComplianceGuard(schema_path="./compliance.json")
 
 # Every inference is audited and scrubbed in real-time
 safe_output = guard.validate(model.predict(user_input))
+
 📦 Deliverables in a 21-Day Sprint
 When we run a Production Sprint with your team, we generate:
 
@@ -87,5 +87,3 @@ Book a Jam: Architecture Jam (30 Mins)
 Email: hello@keithan.eu
 
 © 2026 LXD Advisory — Munich, Germany.
-
-
