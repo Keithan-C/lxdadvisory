@@ -1,171 +1,296 @@
-```
-TERMS OF SERVICE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | LXD Advisory</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        background-color: #0a0d12;
+        color: #e0e0e0;
+        line-height: 1.8;
+        padding: 40px 20px;
+    }
+    
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #141920;
+        padding: 60px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: #00d4ff;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+    }
+    
+    .updated {
+        color: #888;
+        font-size: 0.9rem;
+        margin-bottom: 3rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        color: #00d4ff;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.01em;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+        color: #ffffff;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        margin-bottom: 1.5rem;
+        color: #c0c0c0;
+    }
+    
+    ul, ol {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        color: #c0c0c0;
+    }
+    
+    li {
+        margin-bottom: 0.5rem;
+    }
+    
+    a {
+        color: #00d4ff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    strong {
+        color: #ffffff;
+    }
+    
+    .back-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid #00d4ff;
+        color: #00d4ff;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-bottom: 3rem;
+        transition: 0.3s;
+    }
+    
+    .back-link:hover {
+        background: rgba(0, 212, 255, 0.2);
+        text-decoration: none;
+    }
+    
+    .warning-box {
+        background: rgba(239, 68, 68, 0.1);
+        border-left: 4px solid #ef4444;
+        padding: 20px;
+        margin: 2rem 0;
+    }
+    
+    @media (max-width: 768px) {
+        .container { padding: 30px 20px; }
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
+    }
+</style>
+</head>
+<body>
 
-Last updated: February 21, 2026
+<div class="container">
+    <a href="/" class="back-link">← Back to Home</a>
+    
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: February 21, 2026</p>
 
-1. ACCEPTANCE OF TERMS
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using LXD Advisory services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use our Services.</p>
 
-By accessing or using LXD Advisory services ("Services"), you agree to be bound by
-these Terms of Service ("Terms"). If you do not agree to these Terms, do not use
-our Services.
+    <h2>2. Description of Services</h2>
+    <p>LXD Advisory provides:</p>
+    <ul>
+        <li>EU AI Act compliance methodology consulting</li>
+        <li>Production Sprint workshops for ADAS engineering teams</li>
+        <li>Article 12, 14, and 19 compliance artifact generation services</li>
+        <li>Educational resources and diagnostic tools</li>
+    </ul>
 
-2. DESCRIPTION OF SERVICES
+    <h2>3. Scope of Services</h2>
 
-LXD Advisory provides:
-- EU AI Act compliance methodology training and consulting
-- Production Sprint workshops for ADAS engineering teams
-- Article 12, 14, and 19 compliance artifact generation services
-- Educational resources and diagnostic tools
+    <div class="warning-box">
+        <h3 style="margin-top: 0;">3.1 NOT LEGAL ADVICE</h3>
+        <p style="margin-bottom: 0;"><strong>LXD Advisory is NOT a law firm and does not provide legal advice.</strong> Our services relate to compliance methodology, technical implementation, and engineering best practices. For legal interpretation of regulations, consult a qualified attorney.</p>
+    </div>
 
-3. SCOPE OF SERVICES
+    <h3>3.2 NOT REGULATORY COMPLIANCE CERTIFICATION</h3>
+    <p>We do not certify, audit, or guarantee regulatory compliance. Our services help teams develop compliance documentation and artifacts. Final compliance determination rests with regulatory authorities and your legal counsel.</p>
 
-3.1 NOT LEGAL ADVICE:
-LXD Advisory is NOT a law firm and does not provide legal advice. Our services relate
-to compliance methodology, technical implementation, and engineering best practices.
-For legal interpretation of regulations, consult a qualified attorney.
+    <h3>3.3 NOT ENGINEERING SERVICES</h3>
+    <p>We provide methodology and facilitation. Your team produces the compliance artifacts. We do not provide engineering, software development, or infrastructure implementation services.</p>
 
-3.2 NOT REGULATORY COMPLIANCE CERTIFICATION:
-We do not certify, audit, or guarantee regulatory compliance. Our services help teams
-develop compliance documentation and artifacts. Final compliance determination rests
-with regulatory authorities and your legal counsel.
+    <h2>4. Client Responsibilities</h2>
+    <p>You agree to:</p>
+    <ul>
+        <li>Provide accurate information about your AI systems</li>
+        <li>Assign qualified team members to participate in sessions</li>
+        <li>Implement recommendations in accordance with your legal and regulatory obligations</li>
+        <li>Seek independent legal counsel for legal interpretation of regulations</li>
+        <li>Maintain confidentiality of proprietary methodology</li>
+    </ul>
 
-3.3 NOT ENGINEERING SERVICES:
-We provide methodology and facilitation. Your team produces the compliance artifacts.
-We do not provide engineering, software development, or infrastructure implementation
-services.
+    <h2>5. Intellectual Property</h2>
 
-4. CLIENT RESPONSIBILITIES
+    <h3>5.1 LXD Advisory IP</h3>
+    <p>All methodology, frameworks, templates, and materials provided by LXD Advisory remain our intellectual property. You receive a limited license to use these materials solely for your internal compliance purposes.</p>
 
-You agree to:
-- Provide accurate information about your AI systems
-- Assign qualified team members to participate in sessions
-- Implement recommendations in accordance with your legal and regulatory obligations
-- Seek independent legal counsel for legal interpretation of regulations
-- Maintain confidentiality of proprietary methodology
+    <h3>5.2 Client IP</h3>
+    <p>All information about your AI systems, technical implementations, and artifacts generated during sessions remain your intellectual property.</p>
 
-5. INTELLECTUAL PROPERTY
+    <h3>5.3 Templates and Tools</h3>
+    <p>Templates and tools provided may be used internally. You may not resell, redistribute, or commercialize LXD Advisory methodology without written permission.</p>
 
-5.1 LXD Advisory IP:
-All methodology, frameworks, templates, and materials provided by LXD Advisory remain
-our intellectual property. You receive a limited license to use these materials solely
-for your internal compliance purposes.
+    <h2>6. Confidentiality</h2>
 
-5.2 Client IP:
-All information about your AI systems, technical implementations, and artifacts
-generated during sessions remain your intellectual property.
+    <h3>6.1 Mutual Confidentiality</h3>
+    <p>Both parties agree to maintain confidentiality of proprietary information shared during engagements.</p>
 
-5.3 Templates and Tools:
-Templates and tools provided may be used internally. You may not resell, redistribute,
-or commercialize LXD Advisory methodology without written permission.
+    <h3>6.2 Exceptions</h3>
+    <p>Confidentiality obligations do not apply to:</p>
+    <ul>
+        <li>Information already publicly available</li>
+        <li>Information independently developed</li>
+        <li>Information required to be disclosed by law</li>
+    </ul>
 
-6. CONFIDENTIALITY
+    <h2>7. Warranties and Disclaimers</h2>
 
-6.1 Mutual Confidentiality:
-Both parties agree to maintain confidentiality of proprietary information shared
-during engagements.
+    <h3>7.1 Service Warranty</h3>
+    <p>We warrant that services will be performed with reasonable care and skill consistent with industry standards.</p>
 
-6.2 Exceptions:
-Confidentiality obligations do not apply to:
-- Information already publicly available
-- Information independently developed
-- Information required to be disclosed by law
+    <h3>7.2 Disclaimer of Warranties</h3>
+    <div class="warning-box">
+        <p><strong>SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED,</strong> INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.</p>
+        <p><strong>WE DO NOT WARRANT THAT:</strong></p>
+        <ul style="margin-bottom: 0;">
+            <li>Services will meet all your requirements</li>
+            <li>Services will guarantee regulatory compliance</li>
+            <li>Use of our methodology will prevent regulatory penalties</li>
+            <li>Results will be error-free or uninterrupted</li>
+        </ul>
+    </div>
 
-7. WARRANTIES AND DISCLAIMERS
+    <h2>8. Limitation of Liability</h2>
 
-7.1 SERVICE WARRANTY:
-We warrant that services will be performed with reasonable care and skill consistent
-with industry standards.
+    <div class="warning-box">
+        <p><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</strong></p>
+        
+        <h3 style="margin-top: 1rem;">8.1 LXD ADVISORY SHALL NOT BE LIABLE FOR:</h3>
+        <ul>
+            <li>Indirect, incidental, special, consequential, or punitive damages</li>
+            <li>Loss of profits, revenue, data, or business opportunities</li>
+            <li>Regulatory penalties or enforcement actions</li>
+            <li>Decisions made by you based on our services</li>
+        </ul>
 
-7.2 DISCLAIMER OF WARRANTIES:
-SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED,
-INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
-PURPOSE, OR NON-INFRINGEMENT.
+        <h3>8.2 MAXIMUM LIABILITY</h3>
+        <p style="margin-bottom: 0;">Our total liability shall not exceed the fees paid by you for the specific service giving rise to the claim, or €5,000, whichever is lower.</p>
+    </div>
 
-WE DO NOT WARRANT THAT:
-- Services will meet all your requirements
-- Services will guarantee regulatory compliance
-- Use of our methodology will prevent regulatory penalties
-- Results will be error-free or uninterrupted
+    <h3>8.3 Exceptions</h3>
+    <p>Nothing in these Terms limits liability for:</p>
+    <ul>
+        <li>Death or personal injury caused by negligence</li>
+        <li>Fraud or fraudulent misrepresentation</li>
+        <li>Any liability that cannot be excluded by German law</li>
+    </ul>
 
-8. LIMITATION OF LIABILITY
+    <h2>9. Payment Terms</h2>
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW:
+    <h3>9.1 Fees</h3>
+    <p>Fees are specified in individual service agreements or proposals.</p>
 
-8.1 LXD ADVISORY SHALL NOT BE LIABLE FOR:
-- Indirect, incidental, special, consequential, or punitive damages
-- Loss of profits, revenue, data, or business opportunities
-- Regulatory penalties or enforcement actions
-- Decisions made by you based on our services
+    <h3>9.2 Payment</h3>
+    <p>Payment is due within 14 days of invoice date unless otherwise agreed.</p>
 
-8.2 MAXIMUM LIABILITY:
-Our total liability shall not exceed the fees paid by you for the specific service
-giving rise to the claim, or €5,000, whichever is lower.
+    <h3>9.3 Late Payment</h3>
+    <p>Late payments may incur interest at the statutory rate under German law (§ 288 BGB).</p>
 
-8.3 EXCEPTIONS:
-Nothing in these Terms limits liability for:
-- Death or personal injury caused by negligence
-- Fraud or fraudulent misrepresentation
-- Any liability that cannot be excluded by German law
+    <h3>9.4 Cancellation</h3>
+    <p>Cancellations must be made in writing at least 7 days before scheduled sessions. Late cancellations may incur fees.</p>
 
-9. PAYMENT TERMS
+    <h2>10. Termination</h2>
 
-9.1 Fees:
-Fees are specified in individual service agreements or proposals.
+    <h3>10.1 Either party may terminate services:</h3>
+    <ul>
+        <li>For convenience with 30 days written notice</li>
+        <li>Immediately for material breach not cured within 14 days</li>
+    </ul>
 
-9.2 Payment:
-Payment is due within 14 days of invoice date unless otherwise agreed.
+    <h3>10.2 Effect of Termination</h3>
+    <ul>
+        <li>You remain obligated to pay for services rendered</li>
+        <li>Confidentiality obligations survive termination</li>
+        <li>You retain artifacts generated prior to termination</li>
+    </ul>
 
-9.3 Late Payment:
-Late payments may incur interest at the statutory rate under German law (§ 288 BGB).
+    <h2>11. Dispute Resolution</h2>
 
-9.4 Cancellation:
-Cancellations must be made in writing at least 7 days before scheduled sessions.
-Late cancellations may incur fees.
+    <h3>11.1 Governing Law</h3>
+    <p>These Terms are governed by German law, excluding conflict of law provisions.</p>
 
-10. TERMINATION
+    <h3>11.2 Jurisdiction</h3>
+    <p>Exclusive jurisdiction: Courts of [Your City], Germany</p>
 
-10.1 Either party may terminate services:
-- For convenience with 30 days written notice
-- Immediately for material breach not cured within 14 days
+    <h3>11.3 Informal Resolution</h3>
+    <p>Parties agree to attempt good-faith informal resolution before litigation.</p>
 
-10.2 Effect of Termination:
-- You remain obligated to pay for services rendered
-- Confidentiality obligations survive termination
-- You retain artifacts generated prior to termination
+    <h2>12. General Provisions</h2>
 
-11. DISPUTE RESOLUTION
+    <h3>12.1 Entire Agreement</h3>
+    <p>These Terms, together with any service agreements, constitute the entire agreement.</p>
 
-11.1 Governing Law:
-These Terms are governed by German law, excluding conflict of law provisions.
+    <h3>12.2 Amendments</h3>
+    <p>We may update these Terms. Material changes will be communicated via email or website notice.</p>
 
-11.2 Jurisdiction:
-Exclusive jurisdiction: Courts of [Your City], Germany
+    <h3>12.3 Severability</h3>
+    <p>If any provision is invalid, the remaining provisions remain in effect.</p>
 
-11.3 Informal Resolution:
-Parties agree to attempt good-faith informal resolution before litigation.
+    <h3>12.4 Assignment</h3>
+    <p>You may not assign these Terms without our written consent.</p>
 
-12. GENERAL PROVISIONS
+    <h3>12.5 Force Majeure</h3>
+    <p>Neither party is liable for delays due to circumstances beyond reasonable control.</p>
 
-12.1 Entire Agreement:
-These Terms, together with any service agreements, constitute the entire agreement.
+    <h2>13. Contact</h2>
+    <p>For questions about these Terms:<br>
+    <strong>LXD Advisory</strong><br>
+    Email: <a href="mailto:hello@keithan.eu">hello@keithan.eu</a><br>
+    Address: [Your Business Address]</p>
 
-12.2 Amendments:
-We may update these Terms. Material changes will be communicated via email or website
-notice.
+    <p style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #666; font-size: 0.9rem;">
+        By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
+    </p>
 
-12.3 Severability:
-If any provision is invalid, the remaining provisions remain in effect.
+    <div style="margin-top: 3rem;">
+        <a href="/" class="back-link">← Back to Home</a>
+    </div>
+</div>
 
-12.4 Assignment:
-You may not assign these Terms without our written consent.
-
-12.5 Force Majeure:
-Neither party is liable for delays due to circumstances beyond reasonable control.
-
-13. CONTACT
-
-For questions about these Terms:
-LXD Advisory
-Email:hello@keithan.eu
-
-```
+</body>
+</html>
