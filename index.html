@@ -4,73 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LXD Advisory — Automotive AI Compliance Production Sprints</title>
-    
-    <meta name="description" content="Production Sprints for AI Act compliance. Articles 12 & 19 artifacts in 21 days.">
-    <meta property="og:title" content="LXD Advisory — AI Compliance Production Sprints">
-    <meta property="og:description" content="Generate version-controlled compliance artifacts for ADAS.">
-    <meta property="og:type" content="website">
-
+    <meta name="description" content="Moving beyond slide decks. We provide the Standardized Interface Wrapper for Automotive AI Compliance.">
     <style>
-        /* [KEEP ALL YOUR EXISTING CSS HERE] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0a0d12; color: #e0e0e0; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #0a1628 0%, #0d1117 100%); padding: 80px 20px 60px 20px; text-align: center; border-bottom: 2px solid #00d4ff; position: relative; }
-        .deadline-banner { background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); display: inline-block; padding: 8px 20px; border-radius: 4px; margin-bottom: 20px; font-family: 'Courier New', monospace; font-size: 0.85rem; letter-spacing: 0.1em; color: #fca5a5; }
-        header h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin-bottom: 1rem; font-weight: 800; color: #ffffff; }
-        header h1 .highlight { color: #00d4ff; display: block; margin-top: 0.5rem; }
-        .cta-primary { display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #00d4ff, #0066ff); color: #ffffff; font-weight: bold; border-radius: 6px; text-decoration: none; transition: 0.3s; margin: 30px 10px; }
-        section { padding: 60px 20px; max-width: 1100px; margin: auto; }
-        h2 { font-size: 2.5rem; color: #00d4ff; text-align: center; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #0a0d12; color: #e0e0e0; line-height: 1.6; }
         
-        /* NEW LEGAL SECTION STYLES */
-        .disclaimer-section { background: #0d1117; padding: 40px 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        .disclaimer-content { max-width: 800px; margin: 0 auto; font-size: 0.85rem; color: #888; }
-        .disclaimer-content h4 { color: #00d4ff; margin-bottom: 10px; }
+        /* THEMES */
+        .highlight { color: #00d4ff; }
+        .gradient-text { background: linear-gradient(135deg, #00d4ff, #0066ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        footer { background: #0a0a14; text-align: center; padding: 40px 20px; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        header { background: linear-gradient(135deg, #0a1628 0%, #0d1117 100%); padding: 100px 20px 80px; text-align: center; border-bottom: 2px solid #00d4ff; }
+        .deadline-banner { background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); display: inline-block; padding: 8px 20px; border-radius: 4px; color: #fca5a5; font-family: monospace; margin-bottom: 25px; }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; color: #fff; }
+        .sub-hero { font-size: 1.4rem; color: #b8b8b8; max-width: 800px; margin: 0 auto 40px; }
+
+        /* THE TIERS */
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .tier-card { background: #141920; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 40px; transition: 0.3s; }
+        .tier-card:hover { border-color: #00d4ff; transform: translateY(-5px); }
+        .tier-label { color: #00d4ff; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .tier-card h3 { font-size: 1.8rem; margin: 15px 0; color: #fff; }
+        .tier-card ul { list-style: none; margin-top: 20px; }
+        .tier-card li { margin-bottom: 10px; color: #b8b8b8; font-size: 0.95rem; }
+        .tier-card li::before { content: "✓"; color: #00d4ff; margin-right: 10px; }
+
+        /* PRODUCT ARTIFACTS */
+        .artifact-box { background: #0d1117; border-left: 4px solid #00d4ff; padding: 30px; margin: 40px 0; font-family: 'Courier New', monospace; }
+        .code-snippet { color: #888; font-size: 0.9rem; }
+
+        .cta-primary { display: inline-block; padding: 20px 45px; background: linear-gradient(135deg, #00d4ff, #0066ff); color: #fff; text-decoration: none; font-weight: bold; border-radius: 6px; box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3); }
+
+        /* LEGAL & FOOTER */
+        .legal-notice { background: #0a0a14; padding: 60px 20px; font-size: 0.85rem; border-top: 1px solid #1a1a2e; }
+        footer { background: #05050a; padding: 40px 20px; text-align: center; color: #666; }
         footer a { color: #00d4ff; text-decoration: none; margin: 0 10px; }
-        .legal-bar { margin-top: 20px; font-size: 0.8rem; opacity: 0.6; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="deadline-banner">⚠ ENFORCEMENT: AUGUST 2, 2026 — <span id="banner-days">159</span> DAYS REMAINING</div>
-    <h1>We Don't Train Teams on the AI Act. <span class="highlight">We Run Production Sprints.</span></h1>
-    <p>Generate JSON schemas and Technical Files for Articles 12 & 19 — in 21 days.</p>
-    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Architecture Jam →</a>
+    <div class="deadline-banner">⚠ EU AI ACT ENFORCEMENT: <span id="days-left"></span> DAYS REMAINING</div>
+    <h1>Standardizing the Interface between <span class="highlight">Innovation</span> and <span class="highlight">Liability</span>.</h1>
+    <p class="sub-hero">We provide the <strong>Compliance Middleware Wrapper</strong> that turns legal complexity into version-controlled engineering artifacts.</p>
+    <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" class="cta-primary">Book Architecture Jam →</a>
 </header>
 
-<section class="disclaimer-section" id="legal-notice">
-    <div class="disclaimer-content">
-        <h4>Shared Responsibility & Liability Disclaimer</h4>
-        <p>LXD Advisory provides governance frameworks and technical orchestration tools. We do not provide legal advice or certified engineering services. The Client is responsible for final rule configuration and legal sign-off.</p>
+<section id="tiers">
+    <h2 style="text-align: center; font-size: 2.5rem;">The Three Tiers of LXD Advisory</h2>
+    <div class="tier-grid">
+        <div class="tier-card">
+            <span class="tier-label">Tier 1: The Devs</span>
+            <h3>The Hook</h3>
+            <p>Standardized JSON schemas that automate Article 12/19 compliance in the CI/CD pipeline.</p>
+            <ul>
+                <li>Machine-Readable Logging Schemas</li>
+                <li>Automated Pre-deployment Checks</li>
+                <li>Low-Friction CLI Integration</li>
+            </ul>
+        </div>
+        <div class="tier-card" style="border-color: #00d4ff;">
+            <span class="tier-label">Tier 2: The PMs</span>
+            <h3>The Value</h3>
+            <p>Real-time visibility into model health via the <strong>Axiom Pulse</strong> Dashboard.</p>
+            <ul>
+                <li>Automated Audit Logs</li>
+                <li>Toxicity & Bias Drift Monitoring</li>
+                <li>The "Safety Valve" Kill-Switch</li>
+            </ul>
+        </div>
+        <div class="tier-card">
+            <span class="tier-label">Tier 3: The Board</span>
+            <h3>The Safety</h3>
+            <p>Strategic risk transfer via annual Liability Certification and Insurance alignment.</p>
+            <ul>
+                <li>Liability Warranty Certificates</li>
+                <li>Cyber-Insurance ROI Mapping</li>
+                <li>C-Suite Regulatory Defense Briefs</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section style="background: #0d1117; max-width: 100%;">
+    <div style="max-width: 1200px; margin: auto;">
+        <h2>Beyond Slide Decks: We Ship Code.</h2>
+        <div class="artifact-box">
+            <p class="code-snippet">// Generated Artifact: article_12_compliant_schema.json</p>
+            <p style="color: #00d4ff;">"data_governance": { "pii_scrubbing": true, "retention_policy_days": 30 }</p>
+            <p style="color: #00d4ff;">"model_guardrails": { "max_toxicity_score": 0.1 }</p>
+        </div>
+        <p>Our 21-day sprints don't end with a report. They end with a <strong>Production-Ready Repository</strong>.</p>
+    </div>
+</section>
+
+<section class="legal-notice" id="legal-notice">
+    <div style="max-width: 800px; margin: auto;">
+        <h4 style="color: #00d4ff; margin-bottom: 20px;">Responsibility Matrix & Legal Disclaimer</h4>
+        <p style="margin-bottom: 15px;"><strong>Framework Provider:</strong> LXD Advisory provides the "Standardized Interface" scaffolding. We are Risk Architects, not a law firm or a professional engineering certification body.</p>
+        <p style="margin-bottom: 15px;"><strong>Client Responsibility:</strong> The Client remains the "Pilot." You are responsible for final model configuration, the legal interpretation of specific thresholds, and the technical implementation of our schemas.</p>
+        <p><strong>Shared Governance:</strong> We provide the "Black Box" recorder; you provide the "Flight Rules."</p>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 LXD Advisory</p>
-    <p>
-        <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank">LinkedIn</a> | 
-        <a href="https://github.com/Keithan-C" target="_blank">GitHub</a> | 
+    <p>&copy; 2026 LXD Advisory — Munich, Germany</p>
+    <div style="margin: 20px 0;">
+        <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830">LinkedIn</a> | 
+        <a href="https://github.com/Keithan-C">GitHub</a> | 
         <a href="mailto:hello@lxdadvisory.de">Email</a>
-    </p>
-    
-    <div class="legal-bar">
-        <a href="impressum.html">Impressum</a> | 
-        <a href="datenschutz.html">Datenschutz</a> | 
-        <a href="#legal-notice">Liability Disclaimer</a>
+    </div>
+    <div style="font-size: 0.8rem; opacity: 0.5;">
+        <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
     </div>
 </footer>
 
 <script>
-function updateCountdown() {
-    const deadline = new Date('2026-08-02');
-    const now = new Date();
-    const days = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    document.getElementById('banner-days').textContent = days;
-}
-updateCountdown();
+    function updateCountdown() {
+        const deadline = new Date('2026-08-02');
+        const now = new Date();
+        const diff = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+        document.getElementById('days-left').innerText = diff;
+    }
+    updateCountdown();
 </script>
 </body>
 </html>
