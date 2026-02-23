@@ -3,218 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LXD Advisory | Automated AI Compliance for Automotive</title>
+    <title>LXD Advisory — Automotive AI Compliance Production Sprints</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #141414;
-            --accent-color: #00f2ff; /* Cyber Blue */
-            --text-color: #e0e0e0;
-            --danger: #ff4b2b;
+            --bg-color: #0a0d12;
+            --card-bg: #141920;
+            --accent-color: #00d4ff; /* Cyber Blue */
+            --danger: #ef4444;
+            --text-main: #e0e0e0;
+            --text-dim: #b8b8b8;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            margin: 0;
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
         }
 
         /* 1. STICKY URGENCY BAR */
         .urgency-bar {
-            background: var(--danger);
+            background: rgba(239, 68, 68, 0.9);
+            backdrop-filter: blur(5px);
             color: white;
             text-align: center;
             padding: 10px 0;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* HERO */
         header {
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #0a1628 0%, #0d1117 100%);
+            padding: 100px 20px 80px 20px;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            border-bottom: 2px solid var(--accent-color);
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        .highlight { color: var(--accent-color); display: block; }
 
         .hero-sub {
-            font-size: 1.2rem;
-            color: #888;
-            margin-bottom: 40px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-dim);
+            max-width: 850px;
+            margin: 0 auto 40px auto;
         }
 
-        /* 2. THE THREE TIERS */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .stat-item { font-family: 'Courier New', monospace; font-size: 0.9rem; color: #888; }
+        .stat-item strong { display: block; font-size: 2rem; color: var(--accent-color); }
+
+        /* BUTTONS */
+        .cta-primary {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--accent-color), #0066ff);
+            color: #fff;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5); }
+
+        /* TIERS SECTION */
         .tiers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
             max-width: 1200px;
-            margin: 0 auto 60px auto;
+            margin: -40px auto 80px auto;
             padding: 0 20px;
         }
 
         .tier-card {
             background: var(--card-bg);
             padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #222;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
         }
 
-        .tier-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
+        .tier-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
 
-        .tier-tag {
-            color: var(--accent-color);
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 15px;
-        }
+        .tier-label { color: var(--accent-color); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: block; }
 
-        /* 3. CODE BLOCK SECTION */
-        .code-section {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 20px;
-        }
-
-        .code-window {
+        /* PRODUCTION SPRINT SECTION */
+        .sprint-section { background: #0d1117; padding: 100px 20px; text-align: center; }
+        
+        .artifact-box {
             background: #000;
             border-radius: 8px;
+            padding: 30px;
+            text-align: left;
+            max-width: 700px;
+            margin: 40px auto;
+            border: 1px solid #222;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .artifact-line { color: #b8b8b8; padding: 5px 0; border-bottom: 1px solid #111; }
+        .artifact-line::before { content: "→ "; color: var(--accent-color); }
+
+        /* FOOTER */
+        footer { padding: 80px 20px; text-align: center; background: #080a0f; }
+        
+        .disclaimer-box {
+            max-width: 900px;
+            margin: 40px auto;
             padding: 20px;
-            border: 1px solid #333;
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9rem;
-            overflow-x: auto;
+            background: rgba(255,255,255,0.02);
+            font-size: 0.75rem;
+            color: #666;
+            text-align: left;
+            border: 1px solid #1a1a1a;
         }
 
-        .code-comment { color: #666; }
-        .code-key { color: var(--accent-color); }
-        .code-val { color: #9effff; }
-
-        /* 4. THE 21-DAY SPRINT */
-        .sprint-container {
-            text-align: center;
-            padding: 60px 20px;
-            background: #111;
-        }
-
-        /* 5. BUTTONS */
-        .cta-btn {
-            background: var(--accent-color);
-            color: #000;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        footer {
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-            font-size: 0.9rem;
-            color: #555;
-        }
-
-        .barista-note {
-            font-style: italic;
-            margin-top: 20px;
-            color: #777;
-        }
+        .barista-note { font-style: italic; color: #555; margin-top: 30px; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
-    <div class="urgency-bar">
-        ⚠ EU AI ACT ENFORCEMENT: 159 DAYS REMAINING
+<div class="urgency-bar">
+    ⚠ ENFORCEMENT: AUGUST 2, 2026 — <span id="days-count">159</span> DAYS REMAINING
+</div>
+
+<header>
+    <h1>We Don't Train Teams on the AI Act.<br>
+        <span class="highlight">We Run Production Sprints That Generate It.</span>
+    </h1>
+    <p class="hero-sub">ADAS engineering teams generate Article 12 & 19 JSON schemas and Technical Files in 21 days. Not slide decks. Not homework. Production artifacts.</p>
+    
+    <div class="hero-stats">
+        <div class="stat-item"><strong>21</strong>DAY SPRINT</div>
+        <div class="stat-item"><strong>0</strong>R&D DELAY</div>
+        <div class="stat-item"><strong>100%</strong>ARTIFACTS</div>
     </div>
 
-    <header>
-        <h1>Standardizing the Interface between Innovation and Liability.</h1>
-        <p class="hero-sub">Automated Article 12 Telemetry for Highly Automated Driving (HAD) and Industrial AI. We move the "Compliance Tax" from your developers' backlog to an automated background process.</p>
-        <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" class="cta-btn">Book Architecture Jam →</a>
-    </header>
+    <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" class="cta-primary">Book Architecture Jam →</a>
+</header>
 
-    <section class="tiers-grid">
-        <div class="tier-card">
-            <span class="tier-tag">Tier 1: For R&D Engineers</span>
-            <h3>The Not-Invented-Here Solution</h3>
-            <p>Your talent is too valuable to be used as legal scripters. Integrate machine-readable Article 12 schemas in < 2 hours. Standardized, maintained, and latency-optimized.</p>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> Machine-Readable Schemas</li>
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> CI/CD Pipeline Integration</li>
-            </ul>
-        </div>
+<section class="tiers-grid">
+    <div class="tier-card">
+        <span class="tier-label">Tier 1: Engineering</span>
+        <h3>The Not-Invented-Here Solution</h3>
+        <p>Stop wasting PhD cycles on regulatory maintenance. We provide machine-readable schemas and CI/CD validation scripts that stay focused on the code.</p>
+    </div>
 
-        <div class="tier-card">
-            <span class="tier-tag">Tier 2: For Product Managers</span>
-            <h3>Protect Your Roadmap</h3>
-            <p>Eliminate launch delays. Our <b>Axiom Pulse</b> Dashboard provides real-time audit logs and drift monitoring. Legal sign-off becomes a 5-second export, not a 5-week meeting.</p>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> Automated Audit Dashboards</li>
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> Roadmap Velocity Insurance</li>
-            </ul>
-        </div>
+    <div class="tier-card" style="border-top: 4px solid var(--accent-color);">
+        <span class="tier-label">Tier 2: Product</span>
+        <h3>Protect Your Roadmap</h3>
+        <p>Eliminate launch-day friction. Our Automated Audit Dashboards provide real-time traceability so Legal can sign off in seconds, not weeks.</p>
+    </div>
 
-        <div class="tier-card">
-            <span class="tier-tag">Tier 3: For the Board</span>
-            <h3>EBIT Margin Protection</h3>
-            <p>Risk transfer through standardized regulatory transparency. We bridge the gap between ISO safety standards and the EU AI Act for global scaling and M&A due diligence.</p>
-            <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> Liability Defense Briefs</li>
-                <li><i class="fas fa-check" style="color:var(--accent-color)"></i> Strategic Risk Management</li>
-            </ul>
-        </div>
-    </section>
+    <div class="tier-card">
+        <span class="tier-label">Tier 3: The Board</span>
+        <h3>EBIT Margin Insurance</h3>
+        <p>Strategic risk transfer via annual Liability Certification. Bridge the gap between ISO 26262/21434 and the EU AI Act with precision.</p>
+    </div>
+</section>
 
-    <section class="code-section">
-        <h2 style="text-align: center;">We Ship Code, Not Slides.</h2>
-        <div class="code-window">
-            <span class="code-comment">// Generated Artifact: article_12_compliant_schema.json</span><br>
-            <span class="code-comment">// Performance: < 3.2ms Latency Overhead</span><br>
-            {<br>
-            &nbsp;&nbsp;<span class="code-key">"data_governance"</span>: { <span class="code-key">"pii_scrubbing"</span>: <span class="code-val">true</span>, <span class="code-key">"retention_policy_days"</span>: <span class="code-val">30</span> },<br>
-            &nbsp;&nbsp;<span class="code-key">"traceability"</span>: { <span class="code-key">"decision_logic_hash"</span>: <span class="code-val">"a1b2c3d4..."</span> },<br>
-            &nbsp;&nbsp;<span class="code-key">"human_oversight"</span>: { <span class="code-key">"active"</span>: <span class="code-val">true</span>, <span class="code-key">"intervention_threshold"</span>: <span class="code-val">0.85</span> }<br>
-            }
-        </div>
-        <p style="text-align: center; color: #666; margin-top: 20px;">Our 21-day sprints end with a <b>Production-Ready Repository</b>.</p>
-    </section>
+<section class="sprint-section">
+    <h2>We Ship Code, Not Slides.</h2>
+    <p>What gets generated and integrated in 21 days:</p>
+    
+    <div class="artifact-box">
+        <div class="artifact-line">logging_schema_v1.0.json (Article 12 machine-readable)</div>
+        <div class="artifact-line">compliance_validator.py (CI/CD pre-deployment checks)</div>
+        <div class="artifact-line">article_12_technical_file.xml (EU standard format)</div>
+        <div class="artifact-line">human_oversight_protocol.yaml (Article 14 config)</div>
+    </div>
+    
+    <p style="color: #666;">Integrated directly into your repo. Performance: &lt; 3.2ms Latency Overhead.</p>
+</section>
 
-    <footer id="contact">
-        <p>© 2026 LXD Advisory — Munich | Ingolstadt | Stuttgart</p>
-        <div style="margin: 20px 0;">
-            <a href="https://linkedin.com/in/keithan-cokbilir-b929a830" style="color: var(--accent-color); text-decoration: none; margin: 0 10px;">LinkedIn</a> | 
-            <a href="https://github.com/Keithan-C" style="color: var(--accent-color); text-decoration: none; margin: 0 10px;">GitHub</a> | 
-            <a href="mailto:hello@lxdadvisory.de" style="color: var(--accent-color); text-decoration: none; margin: 0 10px;">Email</a>
-        </div>
-        <p class="barista-note">Technical exchanges are best served with a perfect espresso. Book a "Barista Sync" for our Ingolstadt trip.</p>
-        <p style="font-size: 0.7rem; color: #333; margin-top: 40px;">
-            LXD Advisory provides the "Standardized Interface" scaffolding. We are Risk Architects, not a law firm.
-        </p>
-    </footer>
+<footer>
+    <p>&copy; 2026 LXD Advisory | Munich • Ingolstadt • Stuttgart</p>
+    <div style="margin: 20px 0;">
+        <a href="https://linkedin.com/in/keithan-cokbilir-b929a830" style="color: var(--accent-color); text-decoration: none; margin: 0 15px;">LinkedIn</a>
+        <a href="https://github.com/Keithan-C" style="color: var(--accent-color); text-decoration: none; margin: 0 15px;">GitHub</a>
+        <a href="mailto:hello@lxdadvisory.de" style="color: var(--accent-color); text-decoration: none; margin: 0 15px;">Email</a>
+    </div>
+
+    <p class="barista-note">Technical exchanges are best served with a perfect espresso. Book a "Barista Sync" for our March 3rd visit.</p>
+
+    <div class="disclaimer-box">
+        <strong>Disclaimer:</strong> LXD Advisory provides technical methodology and engineering scaffolding. We are Risk Architects, not a law firm. We provide the "Black Box" recorder; you provide the "Flight Rules."
+    </div>
+</footer>
+
+<script>
+    function updateCountdown() {
+        const deadline = new Date('2026-08-02');
+        const now = new Date();
+        const days = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+        document.getElementById('days-count').textContent = days;
+    }
+    updateCountdown();
+</script>
 
 </body>
 </html>
