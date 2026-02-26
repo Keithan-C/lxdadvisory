@@ -522,14 +522,14 @@ body::before {
     <h2 class="cta-title">Book Your Sprint</h2>
     <p class="cta-text">30-minute Architecture Jam to map your ADAS systems against Article 12/19 requirements. No deck. No sales pitch. Just architecture.</p>
     <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" class="cta-button" target="_blank">Book Architecture Jam →</a>
-    <p class="cta-note">Or email: hello@keithan.eu</p>
+    <p class="cta-note">Or email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e767b7272715e757b776a767f70307b6b">[email&#160;protected]</a></p>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-contact">
       <strong>LXD Advisory</strong> | EU AI Act Article 12/19 Compliance<br>
-      <a href="mailto:hello@keithan.eu">hello@keithan.eu</a> | <a href="https://www.lxdadvisory.de" target="_blank">www.lxdadvisory.de</a>
+      <a href="/cdn-cgi/l/email-protection#84ece1e8e8ebc4efe1edf0ece5eaaae1f1"><span class="__cf_email__" data-cfemail="056d6069696a456e606c716d646b2b6070">[email&#160;protected]</span></a> | <a href="https://www.lxdadvisory.de" target="_blank">www.lxdadvisory.de</a>
     </div>
     <div class="footer-disclaimer">
       <strong>Disclaimer:</strong> LXD Advisory provides compliance methodology and technical implementation guidance. We are not a law firm and do not provide legal advice. For legal interpretation of EU AI Act requirements, consult qualified legal counsel. Services are provided "as is" without warranties of regulatory compliance outcomes.
@@ -537,21 +537,7 @@ body::before {
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Scroll reveal animation
 const reveals = document.querySelectorAll('.reveal');
-const revealOnScroll = () => {
-  reveals.forEach(element => {
-    const elementTop = element.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    if (elementTop < windowHeight - 100) {
-      element.classList.add('active');
-    }
-  });
-};
-window.addEventListener('scroll', revealOnScroll);
-revealOnScroll(); // Initial check
-</script>
-
-</body>
-</html>
+const revealOnScroll
