@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21-Day Production Sprint | LXD Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --midnight: #0a0d12;
+  --steel: #1a1d24;
+  --slate: #2d3139;
+  --frost: #e8eaed;
+  --ice: #ffffff;
+  --electric: #00d4ff;
+  --ember: #ff3b3b;
+  --gold: #f5a623;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--midnight);
+  color: var(--frost);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 59, 59, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.deadline-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--ember), #d32f2f);
+  color: var(--ice);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(255, 59, 59, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(255, 59, 59, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(255, 59, 59, 0.5); }
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, var(--ice) 0%, var(--electric) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--frost);
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+  font-weight: 400;
+}
+
+.tagline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  color: var(--electric);
+  letter-spacing: 0.05em;
+}
+
+/* Pricing Card */
+.pricing-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, var(--steel) 0%, var(--slate) 100%);
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+.pricing-card:hover {
+  border-color: var(--electric);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.offer-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--electric);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.offer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ice);
+  margin-bottom: 20px;
+}
+
+.price-container {
+  margin: 30px 0;
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--electric);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.price-note {
+  font-size: 1rem;
+  color: var(--frost);
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.pilot-badge {
+  display: inline-block;
+  background: rgba(245, 166, 35, 0.15);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+}
+
+/* Deliverables */
+.deliverables {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ice);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.deliverable-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.deliverable-item:hover {
+  background: rgba(0, 212, 255, 0.05);
+  border-color: var(--electric);
+  transform: translateX(5px);
+}
+
+.deliverable-item code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--electric);
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.deliverable-item p {
+  font-size: 0.9rem;
+  color: var(--frost);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.timeline-week {
+  text-align: center;
+  position: relative;
+}
+
+.week-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(0, 212, 255, 0.2);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.week-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ice);
+  margin-bottom: 10px;
+}
+
+.week-desc {
+  font-size: 0.9rem;
+  color: var(--frost);
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 60px 40px;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 212, 255, 0.02));
+  border: 2px solid rgba(0, 212, 255, 0.2);
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--ice);
+  margin-bottom: 20px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  color: var(--frost);
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--electric), #0099cc);
+  color: var(--midnight);
+  padding: 20px 50px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+}
+
+.cta-note {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--frost);
+  margin-top: 30px;
+  opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 60px 40px 40px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-contact {
+  font-size: 1rem;
+  color: var(--frost);
+  margin-bottom: 20px;
+}
+
+.footer-contact a {
+  color: var(--electric);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--ice);
+}
+
+.footer-disclaimer {
+  font-size: 0.85rem;
+  color: var(--frost);
+  opacity: 0.6;
+  max-width: 800px;
+  margin: 30px auto 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { padding: 40px 20px; }
+  .main-title { font-size: 2.5rem; }
+  .subtitle { font-size: 1.2rem; }
+  .pricing-card { padding: 40px 30px; }
+  .price { font-size: 3.5rem; }
+  .deliverable-grid,
+  .timeline-grid { grid-template-columns: 1fr; }
+  .cta-section { padding: 40px 20px; }
+  .cta-title { font-size: 2rem; }
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="deadline-badge">⚠ 159 DAYS TO ENFORCEMENT</div>
+    <h1 class="main-title">21-Day Production Sprint</h1>
+    <p class="subtitle">Version-Controlled Compliance Artifacts for ADAS Engineering Teams</p>
+    <p class="tagline">No slide decks. No homework. Production-ready code.</p>
+  </header>
+
+  <!-- Pricing Card -->
+  <div class="pricing-section">
+    <div class="pricing-card">
+      <div class="card-header">
+        <div class="offer-label">Core Offering</div>
+        <h2 class="offer-name">Production Sprint</h2>
+        <div class="price-container">
+          <div class="price">€12,500</div>
+          <div class="price-note">One ADAS System | 3 Weeks | Complete Artifacts</div>
+          <div class="pilot-badge">Pilot Pricing — Limited Availability</div>
+        </div>
+      </div>
+
+      <!-- What You Get -->
+      <div class="deliverables reveal">
+        <h3 class="section-title">What Gets Generated</h3>
+        <div class="deliverable-grid">
+          <div class="deliverable-item">
+            <code>logging_schema_v1.0.json</code>
+            <p>Article 12-compliant, machine-readable logging schema</p>
+          </div>
+          <div class="deliverable-item">
+            <code>article_12_technical_file.xml</code>
+            <p>EU-required format, auto-generated from schema</p>
+          </div>
+          <div class="deliverable-item">
+            <code>esim_configuration.yaml</code>
+            <p>Infrastructure-as-Code for eSIM/ACSP systems</p>
+          </div>
+          <div class="deliverable-item">
+            <code>compliance_validator.py</code>
+            <p>Automated pre-deployment compliance checks</p>
+          </div>
+          <div class="deliverable-item">
+            <code>human_oversight_protocol.json</code>
+            <p>Article 14 procedures as configuration</p>
+          </div>
+          <div class="deliverable-item">
+            <code>audit_defense_brief.md</code>
+            <p>Auto-generated from schema annotations</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal">
+        <h3 class="section-title">The 21-Day Process</h3>
+        <div class="timeline-grid">
+          <div class="timeline-week">
+            <div class="week-number">1</div>
+            <div class="week-title">Schema Generation</div>
+            <p class="week-desc">Your team generates baseline JSON schema for Article 12</p>
+          </div>
+          <div class="timeline-week">
+            <div class="week-number">2</div>
+            <div class="week-title">Validation & Refinement</div>
+            <p class="week-desc">Iterate schema, add validation rules, generate log control policies</p>
+          </div>
+          <div class="timeline-week">
+            <div class="week-number">3</div>
+            <div class="week-title">CI/CD Integration</div>
+            <p class="week-desc">Integrate into pipeline, generate Technical Files automatically</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2 class="cta-title">Book Your Sprint</h2>
+    <p class="cta-text">30-minute Architecture Jam to map your ADAS systems against Article 12/19 requirements. No deck. No sales pitch. Just architecture.</p>
+    <a href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" class="cta-button" target="_blank">Book Architecture Jam →</a>
+    <p class="cta-note">Or email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e767b7272715e757b776a767f70307b6b">[email&#160;protected]</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-contact">
+      <strong>LXD Advisory</strong> | EU AI Act Article 12/19 Compliance<br>
+      <a href="/cdn-cgi/l/email-protection#84ece1e8e8ebc4efe1edf0ece5eaaae1f1"><span class="__cf_email__" data-cfemail="056d6069696a456e606c716d646b2b6070">[email&#160;protected]</span></a> | <a href="https://www.lxdadvisory.de" target="_blank">www.lxdadvisory.de</a>
+    </div>
+    <div class="footer-disclaimer">
+      <strong>Disclaimer:</strong> LXD Advisory provides compliance methodology and technical implementation guidance. We are not a law firm and do not provide legal advice. For legal interpretation of EU AI Act requirements, consult qualified legal counsel. Services are provided "as is" without warranties of regulatory compliance outcomes.
+    </div>
+  </footer>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Scroll reveal animation
+const reveals = document.querySelectorAll('.reveal');
+const revealOnScroll
