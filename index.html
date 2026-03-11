@@ -6,66 +6,65 @@
 <title>LXD Advisory — EU AI Act Article 12/19 Compliance Production Sprints</title>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
         background-color: #0a0d12;
         color: #e0e0e0;
         line-height: 1.6;
-        /* Subtle grid background */
         background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
         background-size: 40px 40px;
     }
-    
-    /* URGENCY BAR */
+
+    /* ── URGENCY BAR ── */
     .urgency-bar {
-        background: linear-gradient(90deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.4) 50%, rgba(239, 68, 68, 0.2) 100%);
-        border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+        background: linear-gradient(90deg, rgba(239,68,68,.2) 0%, rgba(239,68,68,.4) 50%, rgba(239,68,68,.2) 100%);
+        border-bottom: 1px solid rgba(239,68,68,.3);
         color: #fca5a5;
         text-align: center;
         padding: 10px 20px;
         font-family: 'Courier New', monospace;
         font-weight: 700;
-        font-size: 0.85rem;
+        font-size: .85rem;
         position: sticky;
         top: 0;
         z-index: 1000;
         backdrop-filter: blur(10px);
-        letter-spacing: 0.15em;
+        letter-spacing: .15em;
     }
-    
-    /* HERO */
+
+    /* ── HERO ── */
     header {
         background: linear-gradient(135deg, #0a1628 0%, #0d1117 100%);
-        padding: 100px 20px 80px 20px;
+        padding: 100px 20px 80px;
         text-align: center;
         border-bottom: 2px solid #00d4ff;
         position: relative;
     }
-    
+
     header h1 {
         font-size: clamp(2rem, 6vw, 3.8rem);
         margin-bottom: 1.5rem;
         font-weight: 700;
-        letter-spacing: -0.02em;
-        color: #ffffff;
+        letter-spacing: -.02em;
+        color: #fff;
         line-height: 1.1;
     }
-    
+
     header h1 .highlight {
         color: #00d4ff;
         display: block;
-        margin-top: 0.8rem;
+        margin-top: .8rem;
     }
-    
+
     .hero-subtitle {
         font-size: clamp(1.1rem, 2.5vw, 1.4rem);
         margin-bottom: 1rem;
         color: #fca5a5;
         font-weight: 600;
-        letter-spacing: 0.05em;
+        letter-spacing: .05em;
     }
-    
+
     header p {
         font-size: clamp(1rem, 2.5vw, 1.2rem);
         margin-bottom: 1.5rem;
@@ -74,19 +73,17 @@
         margin-right: auto;
         color: #c0c0c0;
     }
-    
+
     .hero-stats {
         display: flex;
         justify-content: center;
         gap: 40px;
         flex-wrap: wrap;
-        margin: 40px 0 50px 0;
+        margin: 40px 0 50px;
     }
-    
-    .stat {
-        text-align: center;
-    }
-    
+
+    .stat { text-align: center; }
+
     .stat-number {
         font-size: 3rem;
         font-weight: 800;
@@ -94,35 +91,35 @@
         display: block;
         font-family: 'Courier New', monospace;
     }
-    
+
     .stat-label {
-        font-size: 0.9rem;
+        font-size: .9rem;
         color: #888;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: .1em;
     }
-    
+
     .cta-primary {
         display: inline-block;
         padding: 20px 45px;
         background: linear-gradient(135deg, #00d4ff, #0066ff);
-        color: #ffffff;
+        color: #fff;
         font-weight: 700;
         border-radius: 6px;
         text-decoration: none;
-        transition: 0.3s;
+        transition: .3s;
         margin: 10px;
         font-size: 1.05rem;
-        box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        box-shadow: 0 4px 20px rgba(0,212,255,.3);
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: .05em;
     }
-    
+
     .cta-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5);
+        box-shadow: 0 6px 30px rgba(0,212,255,.5);
     }
-    
+
     .cta-secondary {
         display: inline-block;
         padding: 20px 45px;
@@ -132,64 +129,56 @@
         font-weight: 700;
         border-radius: 6px;
         text-decoration: none;
-        transition: 0.3s;
+        transition: .3s;
         margin: 10px;
         font-size: 1.05rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: .05em;
     }
-    
-    .cta-secondary:hover {
-        background: rgba(0, 212, 255, 0.1);
-    }
-    
-    /* SECTIONS */
+
+    .cta-secondary:hover { background: rgba(0,212,255,.1); }
+
+    /* ── SECTIONS ── */
     section {
         padding: 80px 20px;
         max-width: 1200px;
         margin: auto;
     }
-    
+
     h2 {
         font-size: clamp(2rem, 4vw, 2.8rem);
         color: #00d4ff;
         margin-bottom: 2rem;
         text-align: center;
         font-weight: 700;
-        letter-spacing: -0.01em;
+        letter-spacing: -.01em;
     }
-    
+
     h3 {
         font-size: 1.5rem;
-        color: #ffffff;
+        color: #fff;
         margin-bottom: 1rem;
     }
-    
+
     p {
         max-width: 850px;
-        margin: 0 auto 1.5rem auto;
+        margin: 0 auto 1.5rem;
         color: #c0c0c0;
         text-align: center;
         font-size: 1.05rem;
     }
-    
-    /* PROBLEM SECTION */
+
+    /* ── PROBLEM ── */
     .problem-section {
         background: #0d1117;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255,255,255,.1);
     }
-    
-    .problem-section p {
-        font-size: 1.15rem;
-        line-height: 1.8;
-    }
-    
-    .problem-section strong {
-        color: #00d4ff;
-    }
-    
-    /* DELIVERABLES */
+
+    .problem-section p { font-size: 1.15rem; line-height: 1.8; }
+    .problem-section strong { color: #00d4ff; }
+
+    /* ── DELIVERABLES ── */
     .deliverable-box {
         background: #141920;
         border-left: 4px solid #00d4ff;
@@ -198,80 +187,55 @@
         max-width: 800px;
         text-align: left;
     }
-    
-    .deliverable-box h3 {
-        text-align: left;
-        margin-bottom: 25px;
-        color: #00d4ff;
-    }
-    
-    .deliverable-box ul {
-        list-style: none;
-        padding: 0;
-    }
-    
+
+    .deliverable-box h3 { text-align: left; margin-bottom: 25px; color: #00d4ff; }
+    .deliverable-box ul { list-style: none; padding: 0; }
+
     .deliverable-box li {
         padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255,255,255,.05);
         font-family: 'Courier New', monospace;
-        font-size: 0.95rem;
+        font-size: .95rem;
         color: #b8b8b8;
     }
-    
-    .deliverable-box li:last-child {
-        border-bottom: none;
-    }
-    
+
+    .deliverable-box li:last-child { border-bottom: none; }
+
     .deliverable-box li::before {
         content: "→ ";
         color: #00d4ff;
         font-weight: bold;
         margin-right: 10px;
     }
-    
-    /* SPRINT PROCESS */
+
+    /* ── SPRINT GRID ── */
     .sprint-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         margin-top: 50px;
     }
-    
+
     .sprint-card {
         background: #141920;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255,255,255,.08);
         border-radius: 8px;
         padding: 40px 30px;
         text-align: left;
-        transition: 0.3s;
+        transition: .3s;
     }
-    
+
     .sprint-card:hover {
         border-color: #00d4ff;
         transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0, 212, 255, 0.15);
+        box-shadow: 0 8px 30px rgba(0,212,255,.15);
     }
-    
-    .sprint-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        display: block;
-    }
-    
-    .sprint-card h3 {
-        text-align: left;
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-    }
-    
-    .sprint-card p {
-        text-align: left;
-        font-size: 1rem;
-        margin: 0;
-        line-height: 1.7;
-    }
-    
-    /* TESTIMONIALS */
+
+    .sprint-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+    .sprint-card h3 { text-align: left; font-size: 1.4rem; margin-bottom: 1rem; }
+    .sprint-card p  { text-align: left; font-size: 1rem; margin: 0; line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
     .testimonial {
         background: #141920;
         border-left: 4px solid #00d4ff;
@@ -281,17 +245,16 @@
         font-style: italic;
         position: relative;
     }
-    
+
     .testimonial::before {
         content: '"';
         font-size: 5rem;
-        color: rgba(0, 212, 255, 0.15);
+        color: rgba(0,212,255,.15);
         position: absolute;
-        top: 20px;
-        left: 20px;
+        top: 20px; left: 20px;
         font-family: Georgia, serif;
     }
-    
+
     .testimonial p {
         text-align: left;
         margin-bottom: 20px;
@@ -299,192 +262,284 @@
         font-size: 1.1rem;
         color: #e0e0e0;
     }
-    
+
     .testimonial-author {
         text-align: right;
-        font-size: 0.95rem;
+        font-size: .95rem;
         color: #888;
         font-style: normal;
         padding-right: 10px;
     }
-    
-    .testimonial-author strong {
-        color: #00d4ff;
-    }
-    
-    /* FREE TOOLS */
+
+    .testimonial-author strong { color: #00d4ff; }
+
+    /* ── FREE TOOLS GRID ── */
     .tools-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
         margin-top: 50px;
     }
-    
+
     .tool-card {
         background: #141920;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255,255,255,.08);
         border-radius: 8px;
         padding: 35px;
         text-align: center;
-        transition: 0.3s;
+        transition: .3s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    
+
     .tool-card:hover {
-        border-color: rgba(0, 212, 255, 0.4);
+        border-color: rgba(0,212,255,.4);
         transform: translateY(-3px);
     }
-    
+
+    /* ── PLAYBOOK CARD — featured, wider accent ── */
+    .tool-card.playbook-card {
+        border-color: rgba(0,212,255,.3);
+        background: linear-gradient(145deg, #141920 0%, #0f1a24 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tool-card.playbook-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #00d4ff, #0066ff, #00d4ff);
+    }
+
+    .tool-card.playbook-card:hover {
+        border-color: #00d4ff;
+        box-shadow: 0 8px 40px rgba(0,212,255,.2);
+    }
+
     .badge {
         display: inline-block;
-        background: rgba(0, 212, 255, 0.15);
-        border: 1px solid rgba(0, 212, 255, 0.3);
+        background: rgba(0,212,255,.15);
+        border: 1px solid rgba(0,212,255,.3);
         color: #00d4ff;
         padding: 6px 14px;
         border-radius: 4px;
-        font-size: 0.75rem;
+        font-size: .75rem;
         font-family: 'Courier New', monospace;
-        letter-spacing: 0.08em;
+        letter-spacing: .08em;
         margin-bottom: 20px;
         text-transform: uppercase;
     }
-    
-    .tool-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        text-align: center;
+
+    /* NEW: badge for the playbook — gold accent */
+    .badge-playbook {
+        background: rgba(245,158,11,.15);
+        border: 1px solid rgba(245,158,11,.4);
+        color: #f59e0b;
     }
-    
+
+    .tool-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-align: center; }
+
     .tool-card p {
-        font-size: 0.95rem;
+        font-size: .95rem;
         text-align: center;
         margin-bottom: 25px;
         color: #b8b8b8;
+        flex: 1;
     }
-    
-    .tool-card a {
+
+    .tool-card a.tool-link {
         display: inline-block;
         padding: 14px 28px;
-        background: rgba(0, 212, 255, 0.1);
+        background: rgba(0,212,255,.1);
         border: 1px solid #00d4ff;
         color: #00d4ff;
         border-radius: 6px;
         font-weight: 600;
         text-decoration: none;
-        transition: 0.3s;
-        font-size: 0.95rem;
+        transition: .3s;
+        font-size: .95rem;
+        width: 100%;
+        text-align: center;
     }
-    
-    .tool-card a:hover {
-        background: rgba(0, 212, 255, 0.2);
+
+    .tool-card a.tool-link:hover { background: rgba(0,212,255,.2); }
+
+    /* Playbook CTA buttons — stacked */
+    .playbook-ctas {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: auto;
     }
-    
-    /* URGENCY SECTION */
+
+    .btn-playbook-free {
+        display: block;
+        padding: 13px 20px;
+        background: rgba(0,212,255,.1);
+        border: 1px solid #00d4ff;
+        color: #00d4ff;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        font-size: .92rem;
+        transition: .3s;
+        cursor: pointer;
+        font-family: inherit;
+    }
+
+    .btn-playbook-free:hover { background: rgba(0,212,255,.2); }
+
+    .btn-playbook-premium {
+        display: block;
+        padding: 13px 20px;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        border: none;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        font-size: .92rem;
+        transition: .3s;
+        box-shadow: 0 2px 12px rgba(245,158,11,.25);
+    }
+
+    .btn-playbook-premium:hover {
+        background: linear-gradient(135deg, #d97706, #b45309);
+        box-shadow: 0 4px 20px rgba(245,158,11,.4);
+        transform: translateY(-1px);
+    }
+
+    /* Playbook feature mini-list */
+    .playbook-features {
+        list-style: none;
+        width: 100%;
+        margin-bottom: 22px;
+        text-align: left;
+    }
+
+    .playbook-features li {
+        font-size: .84rem;
+        color: #8899aa;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .playbook-features li:last-child { border-bottom: none; }
+
+    .playbook-features li::before {
+        content: '→';
+        color: #00d4ff;
+        flex-shrink: 0;
+        font-weight: bold;
+    }
+
+    /* ── URGENCY SECTION ── */
     .urgency-section {
-        background: rgba(239, 68, 68, 0.08);
-        border: 1px solid rgba(239, 68, 68, 0.2);
+        background: rgba(239,68,68,.08);
+        border: 1px solid rgba(239,68,68,.2);
         border-radius: 8px;
         padding: 50px 40px;
         margin: 60px auto;
         max-width: 900px;
         text-align: center;
     }
-    
-    .urgency-section h3 {
-        color: #fca5a5;
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 1.8rem;
-    }
-    
-    .urgency-section p {
-        color: #d0d0d0;
-        font-size: 1.1rem;
-    }
-    
+
+    .urgency-section h3 { color: #fca5a5; margin-bottom: 20px; text-align: center; font-size: 1.8rem; }
+    .urgency-section p  { color: #d0d0d0; font-size: 1.1rem; }
+
     .countdown {
         font-size: 4rem;
         font-weight: 800;
         color: #ef4444;
         margin: 30px 0;
         font-family: 'Courier New', monospace;
-        text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+        text-shadow: 0 0 20px rgba(239,68,68,.3);
     }
-    
-    /* FOOTER */
+
+    /* ── FOOTER ── */
     footer {
         background: #0a0a14;
         text-align: center;
-        padding: 60px 20px 40px 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 60px 20px 40px;
+        border-top: 1px solid rgba(255,255,255,.05);
     }
-    
-    .footer-links {
-        margin: 30px 0;
-    }
-    
+
+    .footer-links { margin: 30px 0; }
+
     .footer-links a {
         color: #888;
         text-decoration: none;
         margin: 0 15px;
-        font-size: 0.9rem;
-        transition: 0.3s;
-        letter-spacing: 0.05em;
+        font-size: .9rem;
+        transition: .3s;
+        letter-spacing: .05em;
     }
-    
-    .footer-links a:hover {
-        color: #00d4ff;
-    }
-    
+
+    .footer-links a:hover { color: #00d4ff; }
+
     .disclaimer {
         max-width: 950px;
-        margin: 40px auto 20px auto;
+        margin: 40px auto 20px;
         padding: 30px;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.06);
+        background: rgba(255,255,255,.02);
+        border: 1px solid rgba(255,255,255,.06);
         border-radius: 6px;
-        font-size: 0.85rem;
+        font-size: .85rem;
         line-height: 1.7;
         color: #777;
         text-align: left;
     }
-    
-    .disclaimer strong {
-        color: #00d4ff;
-    }
-    
-    /* RESPONSIVE */
+
+    .disclaimer strong { color: #00d4ff; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
         header h1 { font-size: 2rem; }
         .hero-stats { flex-direction: column; gap: 20px; }
         .stat-number { font-size: 2.5rem; }
-        .cta-primary, .cta-secondary { 
-            display: block; 
-            margin: 15px auto; 
-            max-width: 320px; 
+        .cta-primary, .cta-secondary {
+            display: block;
+            margin: 15px auto;
+            max-width: 320px;
         }
-        .urgency-bar { font-size: 0.7rem; padding: 8px 10px; }
-        .disclaimer { font-size: 0.75rem; padding: 20px; }
+        .urgency-bar { font-size: .7rem; padding: 8px 10px; }
+        .disclaimer { font-size: .75rem; padding: 20px; }
+        .tools-grid { grid-template-columns: 1fr; }
     }
 </style>
 </head>
 <body>
 
-<!-- URGENCY BAR -->
+<!-- ════════════════════════════════════════════
+     URGENCY BAR — live countdown via JS
+════════════════════════════════════════════ -->
 <div class="urgency-bar">
-    ⚠ EU AI ACT ENFORCEMENT: AUGUST 2, 2026 — <span id="days-top">159</span> DAYS REMAINING
+    &#x26A0; EU AI ACT ENFORCEMENT: AUGUST 2, 2026 &mdash; <span id="days-top">0</span> DAYS REMAINING
 </div>
 
-<!-- HERO -->
+<!-- ════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
 <header>
     <h1>
         We Don't Train Teams on the AI Act.
         <span class="highlight">We Run Production Sprints That Generate It.</span>
     </h1>
-    
+
     <p class="hero-subtitle">For ADAS Engineering Teams at OEMs and Tier-1 Suppliers</p>
-    
-    <p>Your team generates JSON schemas and Technical Files for EU AI Act Articles 12 & 19 in 21 days. Not slide decks. Not homework. Production artifacts that integrate directly into your CI/CD pipeline.</p>
-    
+
+    <p>Your team generates JSON schemas and Technical Files for EU AI Act Articles 12 &amp; 19 in 21 days.
+    Not slide decks. Not homework. Production artifacts that integrate directly into your CI/CD pipeline.</p>
+
     <div class="hero-stats">
         <div class="stat">
             <span class="stat-number">21</span>
@@ -492,181 +547,298 @@
         </div>
         <div class="stat">
             <span class="stat-number">0</span>
-            <span class="stat-label">R&D Delay</span>
+            <span class="stat-label">R&amp;D Delay</span>
         </div>
         <div class="stat">
             <span class="stat-number">100%</span>
             <span class="stat-label">Artifacts</span>
         </div>
     </div>
-    
-    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Architecture Jam →</a>
-    <a class="cta-secondary" href="/pricing_page.html">View Pricing & Details</a>
+
+    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
+    <a class="cta-secondary" href="/pricing_page.html">View Pricing &amp; Details</a>
 </header>
 
-<!-- THE PROBLEM -->
+<!-- ════════════════════════════════════════════
+     THE PROBLEM
+════════════════════════════════════════════ -->
 <section class="problem-section">
     <h2>The Compliance Infrastructure Gap</h2>
     <p>Most ADAS infrastructure teams think they're compliant because they "have logs."</p>
     <p>But Article 12 doesn't ask if you log data. It asks: <strong>"Show me your logging schema that maps to Article 12 requirements."</strong></p>
     <p>That schema doesn't exist.</p>
     <p>Your infrastructure team is waiting for ADAS to define it. ADAS is waiting for compliance to define it. Compliance is waiting for legal. Legal is waiting for IT.</p>
-    <p><strong>Nobody's building it. 159 days until enforcement. The gap won't close itself.</strong></p>
+    <p><strong>Nobody's building it. The gap won't close itself. The August 2026 deadline will not move.</strong></p>
 </section>
 
-<!-- WHAT GETS BUILT -->
+<!-- ════════════════════════════════════════════
+     WHAT GETS BUILT
+════════════════════════════════════════════ -->
 <section>
     <h2>What Gets Generated in 21 Days</h2>
-    <p>This isn't training. It's a <strong>Production Sprint</strong> where your ADAS team generates version-controlled code artifacts your systems consume programmatically.</p>
-    
+    <p>This isn't training. It's a <strong>Production Sprint</strong> where your ADAS team generates version-controlled
+    code artifacts your systems consume programmatically.</p>
+
     <div class="deliverable-box">
         <h3>Production Artifacts (Version-Controlled)</h3>
         <ul>
-            <li>logging_schema_v1.0.json — Article 12-compliant, machine-readable</li>
-            <li>article_12_technical_file.xml — EU-required format, auto-generated</li>
-            <li>esim_configuration.yaml — Infrastructure-as-Code for eSIM/ACSP</li>
-            <li>compliance_validator.py — Automated pre-deployment checks</li>
-            <li>human_oversight_protocol.json — Article 14 procedures as config</li>
-            <li>audit_defense_brief.md — Auto-generated from schema annotations</li>
+            <li>logging_schema_v1.0.json &mdash; Article 12-compliant, machine-readable</li>
+            <li>article_12_technical_file.xml &mdash; EU-required format, auto-generated</li>
+            <li>esim_configuration.yaml &mdash; Infrastructure-as-Code for eSIM/ACSP</li>
+            <li>compliance_validator.py &mdash; Automated pre-deployment checks</li>
+            <li>human_oversight_protocol.json &mdash; Article 14 procedures as config</li>
+            <li>audit_defense_brief.md &mdash; Auto-generated from schema annotations</li>
         </ul>
     </div>
-    
-    <p style="margin-top: 40px; font-size: 1.1rem;">These integrate directly into your CI/CD pipeline. When your ADAS model version increments, your schemas update automatically.</p>
-    
-    <div style="text-align: center; margin-top: 50px;">
-        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank">Book Architecture Jam →</a>
+
+    <p style="margin-top:40px; font-size:1.1rem;">These integrate directly into your CI/CD pipeline. When your ADAS model version increments, your schemas update automatically.</p>
+
+    <div style="text-align:center; margin-top:50px;">
+        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
     </div>
 </section>
 
-<!-- THE 21-DAY PROCESS -->
-<section style="background: #0d1117;">
-    <h2>The 21-Day Production Sprint</h2>
-    <p>Three half-day sessions across three weeks. Your team produces artifacts during sessions — not as homework after.</p>
-    
-    <div class="sprint-grid">
-        <div class="sprint-card">
-            <span class="sprint-icon">📐</span>
-            <h3>Week 1: Schema Generation</h3>
-            <p>Your ADAS team generates baseline JSON schema for Article 12. Define data types, field mappings, retention policies as code. Initialize Technical File structure in your repo.</p>
-        </div>
-        
-        <div class="sprint-card">
-            <span class="sprint-icon">🔧</span>
-            <h3>Week 2: Validation & Refinement</h3>
-            <p>Iterate schema based on mock audit feedback. Add validation rules. Generate Article 19 log control policies as configuration. Build automated compliance checks.</p>
-        </div>
-        
-        <div class="sprint-card">
-            <span class="sprint-icon">🚀</span>
-            <h3>Week 3: CI/CD Integration</h3>
-            <p>Integrate schemas into deployment pipeline. Configure eSIM/ACSP to consume schemas programmatically. Generate Technical Files automatically from schema annotations.</p>
+<!-- ════════════════════════════════════════════
+     THE 21-DAY PROCESS
+════════════════════════════════════════════ -->
+<section style="background:#0d1117; max-width:100%; padding:80px 20px;">
+    <div style="max-width:1200px; margin:auto;">
+        <h2>The 21-Day Production Sprint</h2>
+        <p>Three half-day sessions across three weeks. Your team produces artifacts during sessions &mdash; not as homework after.</p>
+
+        <div class="sprint-grid">
+            <div class="sprint-card">
+                <span class="sprint-icon">&#x1F4D0;</span>
+                <h3>Week 1: Schema Generation</h3>
+                <p>Your ADAS team generates baseline JSON schema for Article 12. Define data types, field mappings, retention policies as code. Initialize Technical File structure in your repo.</p>
+            </div>
+            <div class="sprint-card">
+                <span class="sprint-icon">&#x1F527;</span>
+                <h3>Week 2: Validation &amp; Refinement</h3>
+                <p>Iterate schema based on mock audit feedback. Add validation rules. Generate Article 19 log control policies as configuration. Build automated compliance checks.</p>
+            </div>
+            <div class="sprint-card">
+                <span class="sprint-icon">&#x1F680;</span>
+                <h3>Week 3: CI/CD Integration</h3>
+                <p>Integrate schemas into deployment pipeline. Configure eSIM/ACSP to consume schemas programmatically. Generate Technical Files automatically from schema annotations.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<!-- ════════════════════════════════════════════
+     SOCIAL PROOF
+════════════════════════════════════════════ -->
 <section>
     <h2>What Engineering Heads Say</h2>
-    
+
     <div class="testimonial">
-        <p>LXD Advisory didn't just train our team — they built the methodology we now use across our entire ADAS portfolio. Three weeks to audit-ready documentation. We expected a course. We got a capability.</p>
-        <div class="testimonial-author">— <strong>VP Engineering</strong>, Tier-1 Automotive Supplier, Germany</div>
+        <p>LXD Advisory didn't just train our team &mdash; they built the methodology we now use across our entire ADAS portfolio.
+        Three weeks to audit-ready documentation. We expected a course. We got a capability.</p>
+        <div class="testimonial-author">&mdash; <strong>VP Engineering</strong>, Tier-1 Automotive Supplier, Germany</div>
     </div>
-    
+
     <div class="testimonial">
-        <p>We had ASPICE L3 in place but no idea how it mapped to the AI Act. The mapping engagement showed us we were 60% there already. We built only the delta. Saved us months.</p>
-        <div class="testimonial-author">— <strong>Chief Architect</strong>, Automotive AI Startup, Munich</div>
+        <p>We had ASPICE L3 in place but no idea how it mapped to the AI Act. The mapping engagement showed us we were 60% there already.
+        We built only the delta. Saved us months.</p>
+        <div class="testimonial-author">&mdash; <strong>Chief Architect</strong>, Automotive AI Startup, Munich</div>
     </div>
 </section>
 
-<!-- FREE TOOLS -->
-<section id="tools" style="background: #0d1117;">
-    <h2>Free Tools & Templates</h2>
-    <p>Prove to yourself we understand the technical depth before booking anything.</p>
-    
-    <div class="tools-grid">
-        <div class="tool-card">
-            <div class="badge">Interactive Tool</div>
-            <h3>Article 12/19 Readiness Scorecard</h3>
-            <p>10-question diagnostic for OTA infrastructure teams. Instant score, gap analysis, recommended action plan. 3 minutes.</p>
-            <a href="https://keithan-c.github.io/scorecard/" target="_blank">Take the Scorecard →</a>
-        </div>
-        
-        <div class="tool-card">
-            <div class="badge">Living Checklist</div>
-            <h3>46-Item Compliance Tracker</h3>
-            <p>Interactive checklist for infrastructure and ADAS teams. Progress saves automatically. Flag blockers. Export status.</p>
-            <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/" target="_blank">Access Checklist →</a>
-        </div>
-        
-        <div class="tool-card">
-            <div class="badge">GitHub Template</div>
-            <h3>ADAS Logging Schema</h3>
-            <p>Article 12-compliant logging schema template. Maps each data field to specific compliance requirements. Fork and customize.</p>
-            <a href="https://github.com/Keithan-C/adas-logging-schema-template" target="_blank">View on GitHub →</a>
+<!-- ════════════════════════════════════════════
+     FREE TOOLS & RESOURCES
+     Playbook card added as a featured resource
+════════════════════════════════════════════ -->
+<section id="tools" style="background:#0d1117; max-width:100%; padding:80px 20px;">
+    <div style="max-width:1200px; margin:auto;">
+        <h2>Free Tools &amp; Resources</h2>
+        <p>Prove to yourself we understand the technical depth before booking anything.</p>
+
+        <div class="tools-grid">
+
+            <!-- ── CARD 1: Scorecard ── -->
+            <div class="tool-card">
+                <div class="badge">Interactive Tool</div>
+                <h3>Article 12/19 Readiness Scorecard</h3>
+                <p>10-question diagnostic for OTA infrastructure teams. Instant score, gap analysis, recommended action plan. 3 minutes.</p>
+                <a href="https://keithan-c.github.io/scorecard/" target="_blank" rel="noopener" class="tool-link">Take the Scorecard &rarr;</a>
+            </div>
+
+            <!-- ── CARD 2: Checklist ── -->
+            <div class="tool-card">
+                <div class="badge">Living Checklist</div>
+                <h3>46-Item Compliance Tracker</h3>
+                <p>Interactive checklist for infrastructure and ADAS teams. Progress saves automatically. Flag blockers. Export status.</p>
+                <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/" target="_blank" rel="noopener" class="tool-link">Access Checklist &rarr;</a>
+            </div>
+
+            <!-- ── CARD 3: GitHub Schema ── -->
+            <div class="tool-card">
+                <div class="badge">GitHub Template</div>
+                <h3>ADAS Logging Schema</h3>
+                <p>Article 12-compliant logging schema template. Maps each data field to specific compliance requirements. Fork and customize.</p>
+                <a href="https://github.com/Keithan-C/adas-logging-schema-template" target="_blank" rel="noopener" class="tool-link">View on GitHub &rarr;</a>
+            </div>
+
+            <!-- ══════════════════════════════════════════
+                 CARD 4: AI Governance Playbook — FEATURED
+                 Full-width across the grid on its own row
+            ══════════════════════════════════════════ -->
+            <div class="tool-card playbook-card" style="grid-column: 1 / -1;">
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center;">
+                    <div class="badge badge-playbook">New &mdash; Free + Premium</div>
+                    <div class="badge">Interactive Playbook</div>
+                </div>
+
+                <h3 style="font-size:1.5rem; margin-bottom:10px;">
+                    AI Governance Playbook for ADAS Teams
+                </h3>
+
+                <p style="max-width:720px; margin-bottom:20px; font-size:1rem; color:#aab8c8;">
+                    A complete EU AI Act compliance framework for ADAS engineering teams &mdash;
+                    from risk classification to governance checkpoints.
+                    Covers Articles 9&ndash;15, Annex IV Technical File requirements,
+                    the documentation gap most teams discover late, and a full RACI matrix.
+                    Free to read online. Premium templates available.
+                </p>
+
+                <!-- Feature list -->
+                <ul class="playbook-features" style="max-width:720px; margin-bottom:24px;">
+                    <li>Risk classification table for 8 ADAS components (pedestrian detection, DMS, AEB, LKA&hellip;)</li>
+                    <li>Split-screen gap analysis: What teams have vs. what homologation asks for</li>
+                    <li>Interactive governance checkpoints across 5 development stages</li>
+                    <li>Full RACI matrix: 10 compliance activities &times; 7 engineering roles</li>
+                    <li>Premium: Annex IV JSON schema, Art. 12 logging implementation, CI/CD validator configs</li>
+                </ul>
+
+                <!-- Two CTAs side by side -->
+                <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; width:100%; max-width:520px;">
+                    <a
+                        href="https://lxdadvisory.de/ai-governance-playbook-v2.html"
+                        class="btn-playbook-free"
+                        target="_blank"
+                        rel="noopener"
+                        style="flex:1; min-width:200px;"
+                    >
+                        &#x1F4D6; Read Free Playbook &rarr;
+                    </a>
+                    <a
+                        href="https://buy.stripe.com/3cIdRbdwsfNmfsD1dX87K00"
+                        class="btn-playbook-premium"
+                        target="_blank"
+                        rel="noopener"
+                        style="flex:1; min-width:200px;"
+                    >
+                        &#x1F512; Unlock Premium &rarr;
+                    </a>
+                </div>
+
+                <p style="font-size:.78rem; color:#556; margin-top:14px; text-align:center;">
+                    Free edition includes all 6 sections &middot; Premium adds production-ready JSON schemas &amp; CI/CD configs
+                </p>
+            </div>
+            <!-- /playbook card -->
+
         </div>
     </div>
 </section>
 
-<!-- URGENCY -->
+<!-- ════════════════════════════════════════════
+     URGENCY
+════════════════════════════════════════════ -->
 <section>
     <div class="urgency-section">
         <h3>The Window Is Closing</h3>
-        <div class="countdown" id="countdown">159 DAYS</div>
-        <p>A 21-day sprint started today finishes mid-March. That leaves ~4.5 months to scale to other teams and complete documentation across your systems portfolio.</p>
-        <p style="margin-top: 20px;"><strong>Teams that started in Q4 2025 are finishing their first pilots now. Everyone else is behind.</strong></p>
-        <p style="margin-top: 20px; font-size: 1rem; color: #888;">The margin is gone. The window to debate has closed.</p>
-        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" style="margin-top: 35px;">Book Your Sprint Slot →</a>
+        <div class="countdown" id="countdown">0 DAYS</div>
+        <p>A 21-day sprint started today finishes in three weeks. That leaves months to scale to other teams and
+        complete documentation across your systems portfolio.</p>
+        <p style="margin-top:20px;"><strong>Teams that started in Q4 2025 are finishing their first pilots now. Everyone else is behind.</strong></p>
+        <p style="margin-top:20px; font-size:1rem; color:#888;">The margin is gone. The window to debate has closed.</p>
+        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener" style="margin-top:35px;">Book Your Sprint Slot &rarr;</a>
     </div>
 </section>
 
-<!-- FINAL CTA -->
-<section style="text-align: center; padding: 100px 20px;">
+<!-- ════════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════════ -->
+<section style="text-align:center; padding:100px 20px;">
     <h2>Book an Architecture Jam</h2>
     <p>30-minute session for Engineering Heads and Chief Architects at OEMs and Tier-1 suppliers.</p>
-    <p>We map your AI systems against Articles 12, 14, and 19 — and show you exactly where the gaps are.</p>
-    <p style="font-weight: 600; color: #00d4ff; margin-top: 30px;">No deck. No sales pitch. Just architecture.</p>
-    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" style="font-size: 1.15rem; padding: 22px 50px; margin-top: 40px;">Book Architecture Jam →</a>
-    <p style="margin-top: 20px;"><a href="/pricing_page.html" style="color: #00d4ff; text-decoration: none; font-weight: 600;">View Pricing & Sprint Details →</a></p>
-    <p style="margin-top: 30px; font-size: 1rem; color: #888;">Or email: <a href="/cdn-cgi/l/email-protection#0d65686161624d66686479656c63236878" style="color: #00d4ff; text-decoration: none;"><span class="__cf_email__" data-cfemail="fd9598919192bd96989489959c93d39888">[email&#160;protected]</span></a></p>
+    <p>We map your AI systems against Articles 12, 14, and 19 &mdash; and show you exactly where the gaps are.</p>
+    <p style="font-weight:600; color:#00d4ff; margin-top:30px;">No deck. No sales pitch. Just architecture.</p>
+    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener" style="font-size:1.15rem; padding:22px 50px; margin-top:40px;">Book Architecture Jam &rarr;</a>
+    <p style="margin-top:20px;">
+        <a href="/pricing_page.html" style="color:#00d4ff; text-decoration:none; font-weight:600;">View Pricing &amp; Sprint Details &rarr;</a>
+    </p>
+    <p style="margin-top:30px; font-size:1rem; color:#888;">
+        Or email: <a href="mailto&#58;hello&#64;keithan&#46;eu" style="color:#00d4ff; text-decoration:none;">hello&#64;keithan.eu</a>
+    </p>
 </section>
 
-<!-- FOOTER -->
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
 <footer>
-    <p style="font-size: 1.1rem; margin-bottom: 10px;">&copy; 2026 LXD Advisory</p>
-    <p style="font-size: 0.95rem; color: #666; margin-bottom: 30px;">EU AI Act Article 12 & 19 Compliance Methodology for Automotive R&D Teams</p>
-    
+    <p style="font-size:1.1rem; margin-bottom:10px;">&copy; 2026 LXD Advisory</p>
+    <p style="font-size:.95rem; color:#666; margin-bottom:30px;">EU AI Act Article 12 &amp; 19 Compliance Methodology for Automotive R&amp;D Teams</p>
+
     <div class="footer-links">
-        <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank">LINKEDIN</a>
-        <a href="https://github.com/Keithan-C" target="_blank">GITHUB</a>
-        <a href="/cdn-cgi/l/email-protection#3c54595050537c57595548545d52125949">EMAIL</a>
+        <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank" rel="noopener">LINKEDIN</a>
+        <a href="https://github.com/Keithan-C" target="_blank" rel="noopener">GITHUB</a>
+        <a href="mailto&#58;hello&#64;keithan&#46;eu">EMAIL</a>
     </div>
-    
-    <div class="footer-links" style="margin-top: 15px;">
+
+    <div class="footer-links" style="margin-top:15px;">
         <a href="/pricing_page.html">PRICING</a>
         <a href="/impressum.html">IMPRESSUM</a>
         <a href="/privacy-policy.html">PRIVACY POLICY</a>
         <a href="/terms-of-service.html">TERMS OF SERVICE</a>
     </div>
-    
+
     <div class="disclaimer">
-        <strong>LEGAL DISCLAIMER:</strong> The information provided on this website is for general informational purposes only and does not constitute legal, regulatory, or professional compliance advice. LXD Advisory is not a law firm and does not provide legal services. Our services relate to compliance methodology, technical implementation, and engineering best practices. For specific legal or regulatory compliance questions, consult a qualified attorney or regulatory expert in your jurisdiction. We do not certify, audit, or guarantee regulatory compliance outcomes. Final compliance determination rests with regulatory authorities and your legal counsel. Services are provided "as is" without warranties of any kind. LXD Advisory's maximum liability shall not exceed fees paid for services rendered. For complete terms, see our <a href="/terms-of-service.html" style="color: #00d4ff; text-decoration: none;">Terms of Service</a> and <a href="/privacy-policy.html" style="color: #00d4ff; text-decoration: none;">Privacy Policy</a>.
+        <strong>LEGAL DISCLAIMER:</strong> The information provided on this website is for general informational purposes
+        only and does not constitute legal, regulatory, or professional compliance advice. LXD Advisory is not a law firm
+        and does not provide legal services. Our services relate to compliance methodology, technical implementation, and
+        engineering best practices. For specific legal or regulatory compliance questions, consult a qualified attorney or
+        regulatory expert in your jurisdiction. We do not certify, audit, or guarantee regulatory compliance outcomes.
+        Final compliance determination rests with regulatory authorities and your legal counsel. Services are provided
+        "as is" without warranties of any kind. LXD Advisory's maximum liability shall not exceed fees paid for services
+        rendered. For complete terms, see our
+        <a href="/terms-of-service.html" style="color:#00d4ff; text-decoration:none;">Terms of Service</a> and
+        <a href="/privacy-policy.html" style="color:#00d4ff; text-decoration:none;">Privacy Policy</a>.
     </div>
-    
-    <p style="margin-top: 30px; font-size: 0.9rem; color: #555;">
-        August 2, 2026 enforcement deadline · <span id="footer-days">159</span> days remaining
+
+    <p style="margin-top:30px; font-size:.9rem; color:#555;">
+        August 2, 2026 enforcement deadline &middot; <span id="footer-days">0</span> days remaining
     </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Dynamic countdown update
-function updateCountdown() {
-    const deadline = new Date('2026-08-02');
-    const now = new Date();
-    const days = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    
-    const countdownEl = document.getElementById('countdown');
-    const footerDaysEl = document.getElementById('footer-days');
-    const daysTopEl = document.getElementById('days-top');
-    
-    if (countdownEl) countdownEl.textContent =
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT — Live countdown (no Cloudflare email obfuscation)
+════════════════════════════════════════════ -->
+<script>
+(function() {
+    function updateCountdown() {
+        var deadline = new Date('2026-08-02T00:00:00Z');
+        var now      = new Date();
+        var days     = Math.max(0, Math.ceil((deadline - now) / (1000 * 60 * 60 * 24)));
+
+        var els = ['countdown', 'footer-days', 'days-top'];
+        els.forEach(function(id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            if (id === 'countdown') {
+                el.textContent = days + ' DAYS';
+            } else {
+                el.textContent = days;
+            }
+        });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+})();
+</script>
+
+</body>
+</html>
