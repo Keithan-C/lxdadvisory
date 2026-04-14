@@ -298,7 +298,6 @@
         transform: translateY(-3px);
     }
 
-    /* ── PLAYBOOK CARD — featured, wider accent ── */
     .tool-card.playbook-card {
         border-color: rgba(0,212,255,.3);
         background: linear-gradient(145deg, #141920 0%, #0f1a24 100%);
@@ -333,11 +332,16 @@
         text-transform: uppercase;
     }
 
-    /* NEW: badge for the playbook — gold accent */
     .badge-playbook {
         background: rgba(245,158,11,.15);
         border: 1px solid rgba(245,158,11,.4);
         color: #f59e0b;
+    }
+
+    .badge-workshop {
+        background: rgba(167,139,250,.15);
+        border: 1px solid rgba(167,139,250,.4);
+        color: #a78bfa;
     }
 
     .tool-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-align: center; }
@@ -367,7 +371,6 @@
 
     .tool-card a.tool-link:hover { background: rgba(0,212,255,.2); }
 
-    /* Playbook CTA buttons — stacked */
     .playbook-ctas {
         display: flex;
         flex-direction: column;
@@ -415,7 +418,6 @@
         transform: translateY(-1px);
     }
 
-    /* Playbook feature mini-list */
     .playbook-features {
         list-style: none;
         width: 100%;
@@ -440,6 +442,217 @@
         color: #00d4ff;
         flex-shrink: 0;
         font-weight: bold;
+    }
+
+    /* ══════════════════════════════════════
+       WORKSHOP SECTION — new styles
+    ══════════════════════════════════════ */
+    .workshop-outer {
+        background: #0d1117;
+        border-top: 1px solid rgba(255,255,255,.06);
+        border-bottom: 1px solid rgba(255,255,255,.06);
+        padding: 80px 20px;
+    }
+
+    .workshop-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .workshop-card {
+        background: linear-gradient(145deg, #141920 0%, #0f1624 100%);
+        border: 1px solid rgba(167,139,250,.25);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .workshop-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #a78bfa, #7c3aed, #a78bfa);
+    }
+
+    .workshop-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 32px;
+        align-items: center;
+        padding: 44px 48px 32px;
+        border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+
+    .workshop-eyebrow {
+        font-family: 'Courier New', monospace;
+        font-size: .75rem;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 12px;
+    }
+
+    .workshop-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: 10px;
+    }
+
+    .workshop-title em {
+        font-style: italic;
+        color: #a78bfa;
+    }
+
+    .workshop-subtitle {
+        font-size: .95rem;
+        color: #8899aa;
+        line-height: 1.7;
+        text-align: left;
+        margin: 0;
+        max-width: 580px;
+    }
+
+    .workshop-price-block { text-align: right; flex-shrink: 0; }
+
+    .workshop-price {
+        font-size: 3.2rem;
+        font-weight: 800;
+        color: #a78bfa;
+        font-family: 'Courier New', monospace;
+        line-height: 1;
+    }
+
+    .workshop-price-label {
+        font-size: .75rem;
+        color: #556;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        margin-top: 4px;
+        font-family: 'Courier New', monospace;
+    }
+
+    .workshop-body { padding: 36px 48px 44px; }
+
+    .workshop-meta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+    }
+
+    .workshop-pill {
+        padding: 5px 14px;
+        border: 1px solid rgba(167,139,250,.3);
+        border-radius: 20px;
+        font-size: .78rem;
+        color: #a78bfa;
+        font-family: 'Courier New', monospace;
+        letter-spacing: .05em;
+        background: rgba(167,139,250,.08);
+    }
+
+    .workshop-outcomes {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        margin-bottom: 36px;
+    }
+
+    .workshop-outcome {
+        background: rgba(255,255,255,.03);
+        padding: 18px 20px;
+        border-left: 2px solid rgba(167,139,250,.3);
+        transition: .2s;
+    }
+
+    .workshop-outcome:hover {
+        background: rgba(167,139,250,.06);
+        border-left-color: #a78bfa;
+    }
+
+    .outcome-tag {
+        font-family: 'Courier New', monospace;
+        font-size: .7rem;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+
+    .outcome-desc {
+        font-size: .88rem;
+        color: #9aacbc;
+        line-height: 1.55;
+    }
+
+    .workshop-footer-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .workshop-cert {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: .85rem;
+        color: #667;
+        flex: 1;
+    }
+
+    .workshop-cert-icon { font-size: 1.3rem; }
+
+    .workshop-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .btn-workshop-learn {
+        display: inline-block;
+        padding: 12px 24px;
+        background: transparent;
+        border: 1px solid rgba(167,139,250,.5);
+        color: #a78bfa;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: .9rem;
+        transition: .3s;
+        white-space: nowrap;
+    }
+
+    .btn-workshop-learn:hover {
+        background: rgba(167,139,250,.1);
+        border-color: #a78bfa;
+    }
+
+    .btn-workshop-book {
+        display: inline-block;
+        padding: 12px 28px;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: .9rem;
+        transition: .3s;
+        box-shadow: 0 2px 16px rgba(167,139,250,.25);
+        white-space: nowrap;
+    }
+
+    .btn-workshop-book:hover {
+        background: linear-gradient(135deg, #7c3aed, #6d28d9);
+        box-shadow: 0 4px 24px rgba(167,139,250,.4);
+        transform: translateY(-1px);
     }
 
     /* ── URGENCY SECTION ── */
@@ -514,32 +727,30 @@
         .urgency-bar { font-size: .7rem; padding: 8px 10px; }
         .disclaimer { font-size: .75rem; padding: 20px; }
         .tools-grid { grid-template-columns: 1fr; }
+        .workshop-header { grid-template-columns: 1fr; gap: 16px; }
+        .workshop-price-block { text-align: left; }
+        .workshop-outcomes { grid-template-columns: 1fr; }
+        .workshop-header, .workshop-body { padding: 28px 24px; }
+        .workshop-footer-row { flex-direction: column; align-items: flex-start; }
     }
 </style>
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     URGENCY BAR — live countdown via JS
-════════════════════════════════════════════ -->
+<!-- URGENCY BAR -->
 <div class="urgency-bar">
     &#x26A0; EU AI ACT ENFORCEMENT: AUGUST 2, 2026 &mdash; <span id="days-top">0</span> DAYS REMAINING
 </div>
 
-<!-- ════════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
+<!-- HERO -->
 <header>
     <h1>
         We Don't Train Teams on the AI Act.
         <span class="highlight">We Run Production Sprints That Generate It.</span>
     </h1>
-
     <p class="hero-subtitle">For ADAS Engineering Teams at OEMs and Tier-1 Suppliers</p>
-
     <p>Your team generates JSON schemas and Technical Files for EU AI Act Articles 12 &amp; 19 in 21 days.
     Not slide decks. Not homework. Production artifacts that integrate directly into your CI/CD pipeline.</p>
-
     <div class="hero-stats">
         <div class="stat">
             <span class="stat-number">21</span>
@@ -554,14 +765,11 @@
             <span class="stat-label">Artifacts</span>
         </div>
     </div>
-
     <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
     <a class="cta-secondary" href="/pricing_page.html">View Pricing &amp; Details</a>
 </header>
 
-<!-- ════════════════════════════════════════════
-     THE PROBLEM
-════════════════════════════════════════════ -->
+<!-- THE PROBLEM -->
 <section class="problem-section">
     <h2>The Compliance Infrastructure Gap</h2>
     <p>Most ADAS infrastructure teams think they're compliant because they "have logs."</p>
@@ -571,14 +779,11 @@
     <p><strong>Nobody's building it. The gap won't close itself. The August 2026 deadline will not move.</strong></p>
 </section>
 
-<!-- ════════════════════════════════════════════
-     WHAT GETS BUILT
-════════════════════════════════════════════ -->
+<!-- WHAT GETS BUILT -->
 <section>
     <h2>What Gets Generated in 21 Days</h2>
     <p>This isn't training. It's a <strong>Production Sprint</strong> where your ADAS team generates version-controlled
     code artifacts your systems consume programmatically.</p>
-
     <div class="deliverable-box">
         <h3>Production Artifacts (Version-Controlled)</h3>
         <ul>
@@ -590,22 +795,17 @@
             <li>audit_defense_brief.md &mdash; Auto-generated from schema annotations</li>
         </ul>
     </div>
-
     <p style="margin-top:40px; font-size:1.1rem;">These integrate directly into your CI/CD pipeline. When your ADAS model version increments, your schemas update automatically.</p>
-
     <div style="text-align:center; margin-top:50px;">
         <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
     </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     THE 21-DAY PROCESS
-════════════════════════════════════════════ -->
+<!-- 21-DAY PROCESS -->
 <section style="background:#0d1117; max-width:100%; padding:80px 20px;">
     <div style="max-width:1200px; margin:auto;">
         <h2>The 21-Day Production Sprint</h2>
         <p>Three half-day sessions across three weeks. Your team produces artifacts during sessions &mdash; not as homework after.</p>
-
         <div class="sprint-grid">
             <div class="sprint-card">
                 <span class="sprint-icon">&#x1F4D0;</span>
@@ -626,18 +826,14 @@
     </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     SOCIAL PROOF
-════════════════════════════════════════════ -->
+<!-- SOCIAL PROOF -->
 <section>
     <h2>What Engineering Heads Say</h2>
-
     <div class="testimonial">
         <p>LXD Advisory didn't just train our team &mdash; they built the methodology we now use across our entire ADAS portfolio.
         Three weeks to audit-ready documentation. We expected a course. We got a capability.</p>
         <div class="testimonial-author">&mdash; <strong>VP Engineering</strong>, Tier-1 Automotive Supplier, Germany</div>
     </div>
-
     <div class="testimonial">
         <p>We had ASPICE L3 in place but no idea how it mapped to the AI Act. The mapping engagement showed us we were 60% there already.
         We built only the delta. Saved us months.</p>
@@ -646,54 +842,99 @@
 </section>
 
 <!-- ════════════════════════════════════════════
-     FREE TOOLS & RESOURCES
-     Playbook card added as a featured resource
+     ARTICLE 4 WORKSHOP — NEW SECTION
 ════════════════════════════════════════════ -->
+<div class="workshop-outer">
+    <div class="workshop-inner">
+        <h2 style="color:#a78bfa; margin-bottom:.75rem;">Article 4 AI Literacy Workshop</h2>
+        <p style="margin-bottom:40px; color:#8899aa;">Before your team can build compliant systems, they need documented AI literacy. Article 4 requires it. An auditor will ask for it.</p>
+
+        <div class="workshop-card">
+            <div class="workshop-header">
+                <div>
+                    <div class="workshop-eyebrow">EU AI Act &middot; Article 4 &middot; Live Workshop</div>
+                    <h3 class="workshop-title">AI Literacy that holds up<br><em>under audit.</em></h3>
+                    <p class="workshop-subtitle">A 90-minute live working session for ADAS engineering teams. Built around how engineers actually learn &mdash; not how compliance teams prefer to deliver it. Every attendee leaves with a completed gap analysis, not a generic checklist.</p>
+                </div>
+                <div class="workshop-price-block">
+                    <div class="workshop-price">€199</div>
+                    <div class="workshop-price-label">per seat</div>
+                </div>
+            </div>
+
+            <div class="workshop-body">
+                <div class="workshop-meta">
+                    <span class="workshop-pill">90 minutes &middot; Live on Zoom</span>
+                    <span class="workshop-pill">Max 12 participants</span>
+                    <span class="workshop-pill">Working session &mdash; not a webinar</span>
+                    <span class="workshop-pill">Certificate included</span>
+                </div>
+
+                <div class="workshop-outcomes">
+                    <div class="workshop-outcome">
+                        <div class="outcome-tag">→ Scope clarity</div>
+                        <div class="outcome-desc">Identify which team members are in scope under Article 4 &mdash; and explain why to an auditor.</div>
+                    </div>
+                    <div class="workshop-outcome">
+                        <div class="outcome-tag">→ Documented competence</div>
+                        <div class="outcome-desc">Define what Article 4 compliance looks like for three specific engineering roles in your organisation.</div>
+                    </div>
+                    <div class="workshop-outcome">
+                        <div class="outcome-tag">→ Audit-ready trail</div>
+                        <div class="outcome-desc">Audit your current training against the 5 components of a compliant AI literacy trail.</div>
+                    </div>
+                    <div class="workshop-outcome">
+                        <div class="outcome-tag">→ Gap analysis</div>
+                        <div class="outcome-desc">Leave with a completed gap analysis for your team &mdash; not a generic checklist you'll file and forget.</div>
+                    </div>
+                </div>
+
+                <div class="workshop-footer-row">
+                    <div class="workshop-cert">
+                        <span class="workshop-cert-icon">📋</span>
+                        <span>Named certificate of completion &mdash; built for compliance folders, not LinkedIn profiles. Designed to satisfy an auditor's request for documented competence evidence.</span>
+                    </div>
+                    <div class="workshop-ctas">
+                        <a href="/workshop" class="btn-workshop-learn">Learn more &rarr;</a>
+                        <a href="mailto:hello@keithan.eu?subject=Article 4 Workshop" class="btn-workshop-book">Reserve a seat &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /WORKSHOP SECTION -->
+
+<!-- FREE TOOLS & RESOURCES -->
 <section id="tools" style="background:#0d1117; max-width:100%; padding:80px 20px;">
     <div style="max-width:1200px; margin:auto;">
         <h2>Free Tools &amp; Resources</h2>
         <p>Prove to yourself we understand the technical depth before booking anything.</p>
-
         <div class="tools-grid">
-
-            <!-- ── CARD 1: Scorecard ── -->
             <div class="tool-card">
                 <div class="badge">Interactive Tool</div>
                 <h3>Article 12/19 Readiness Scorecard</h3>
                 <p>10-question diagnostic for OTA infrastructure teams. Instant score, gap analysis, recommended action plan. 3 minutes.</p>
                 <a href="https://keithan-c.github.io/scorecard/" target="_blank" rel="noopener" class="tool-link">Take the Scorecard &rarr;</a>
             </div>
-
-            <!-- ── CARD 2: Checklist ── -->
             <div class="tool-card">
                 <div class="badge">Living Checklist</div>
                 <h3>46-Item Compliance Tracker</h3>
                 <p>Interactive checklist for infrastructure and ADAS teams. Progress saves automatically. Flag blockers. Export status.</p>
                 <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/" target="_blank" rel="noopener" class="tool-link">Access Checklist &rarr;</a>
             </div>
-
-            <!-- ── CARD 3: GitHub Schema ── -->
             <div class="tool-card">
                 <div class="badge">GitHub Template</div>
                 <h3>ADAS Logging Schema</h3>
                 <p>Article 12-compliant logging schema template. Maps each data field to specific compliance requirements. Fork and customize.</p>
                 <a href="https://github.com/Keithan-C/adas-logging-schema-template" target="_blank" rel="noopener" class="tool-link">View on GitHub &rarr;</a>
             </div>
-
-            <!-- ══════════════════════════════════════════
-                 CARD 4: AI Governance Playbook — FEATURED
-                 Full-width across the grid on its own row
-            ══════════════════════════════════════════ -->
             <div class="tool-card playbook-card" style="grid-column: 1 / -1;">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center;">
                     <div class="badge badge-playbook">New &mdash; Free + Premium</div>
                     <div class="badge">Interactive Playbook</div>
                 </div>
-
-                <h3 style="font-size:1.5rem; margin-bottom:10px;">
-                    AI Governance Playbook for ADAS Teams
-                </h3>
-
+                <h3 style="font-size:1.5rem; margin-bottom:10px;">AI Governance Playbook for ADAS Teams</h3>
                 <p style="max-width:720px; margin-bottom:20px; font-size:1rem; color:#aab8c8;">
                     A complete EU AI Act compliance framework for ADAS engineering teams &mdash;
                     from risk classification to governance checkpoints.
@@ -701,8 +942,6 @@
                     the documentation gap most teams discover late, and a full RACI matrix.
                     Free to read online. Premium templates available.
                 </p>
-
-                <!-- Feature list -->
                 <ul class="playbook-features" style="max-width:720px; margin-bottom:24px;">
                     <li>Risk classification table for 8 ADAS components (pedestrian detection, DMS, AEB, LKA&hellip;)</li>
                     <li>Split-screen gap analysis: What teams have vs. what homologation asks for</li>
@@ -710,42 +949,23 @@
                     <li>Full RACI matrix: 10 compliance activities &times; 7 engineering roles</li>
                     <li>Premium: Annex IV JSON schema, Art. 12 logging implementation, CI/CD validator configs</li>
                 </ul>
-
-                <!-- Two CTAs side by side -->
                 <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; width:100%; max-width:520px;">
-                    <a
-                        href="https://keithan-c.github.io/Playbook/"
-                        class="btn-playbook-free"
-                        target="_blank"
-                        rel="noopener"
-                        style="flex:1; min-width:200px;"
-                    >
+                    <a href="https://keithan-c.github.io/Playbook/" class="btn-playbook-free" target="_blank" rel="noopener" style="flex:1; min-width:200px;">
                         &#x1F4D6; Read Free Playbook &rarr;
                     </a>
-                    <a
-                        href="https://buy.stripe.com/3cIdRbdwsfNmfsD1dX87K00"
-                        class="btn-playbook-premium"
-                        target="_blank"
-                        rel="noopener"
-                        style="flex:1; min-width:200px;"
-                    >
+                    <a href="https://buy.stripe.com/3cIdRbdwsfNmfsD1dX87K00" class="btn-playbook-premium" target="_blank" rel="noopener" style="flex:1; min-width:200px;">
                         &#x1F512; Unlock Premium &rarr;
                     </a>
                 </div>
-
                 <p style="font-size:.78rem; color:#556; margin-top:14px; text-align:center;">
                     Free edition includes all 6 sections &middot; Premium adds production-ready JSON schemas &amp; CI/CD configs
                 </p>
             </div>
-            <!-- /playbook card -->
-
         </div>
     </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     URGENCY
-════════════════════════════════════════════ -->
+<!-- URGENCY -->
 <section>
     <div class="urgency-section">
         <h3>The Window Is Closing</h3>
@@ -758,9 +978,7 @@
     </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     FINAL CTA
-════════════════════════════════════════════ -->
+<!-- FINAL CTA -->
 <section style="text-align:center; padding:100px 20px;">
     <h2>Book an Architecture Jam</h2>
     <p>30-minute session for Engineering Heads and Chief Architects at OEMs and Tier-1 suppliers.</p>
@@ -771,30 +989,25 @@
         <a href="/pricing_page.html" style="color:#00d4ff; text-decoration:none; font-weight:600;">View Pricing &amp; Sprint Details &rarr;</a>
     </p>
     <p style="margin-top:30px; font-size:1rem; color:#888;">
-        Or email: <a href="mailto&#58;hello&#64;keithan&#46;eu" style="color:#00d4ff; text-decoration:none;">hello&#64;keithan.eu</a>
+        Or email: <a href="mailto:hello@keithan.eu" style="color:#00d4ff; text-decoration:none;">hello@keithan.eu</a>
     </p>
 </section>
 
-<!-- ════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
     <p style="font-size:1.1rem; margin-bottom:10px;">&copy; 2026 LXD Advisory</p>
     <p style="font-size:.95rem; color:#666; margin-bottom:30px;">EU AI Act Article 12 &amp; 19 Compliance Methodology for Automotive R&amp;D Teams</p>
-
     <div class="footer-links">
         <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank" rel="noopener">LINKEDIN</a>
         <a href="https://github.com/Keithan-C" target="_blank" rel="noopener">GITHUB</a>
-        <a href="mailto&#58;hello&#64;keithan&#46;eu">EMAIL</a>
+        <a href="mailto:hello@keithan.eu">EMAIL</a>
     </div>
-
     <div class="footer-links" style="margin-top:15px;">
         <a href="/pricing_page.html">PRICING</a>
         <a href="/impressum.html">IMPRESSUM</a>
         <a href="/privacy-policy.html">PRIVACY POLICY</a>
         <a href="/terms-of-service.html">TERMS OF SERVICE</a>
     </div>
-
     <div class="disclaimer">
         <strong>LEGAL DISCLAIMER:</strong> The information provided on this website is for general informational purposes
         only and does not constitute legal, regulatory, or professional compliance advice. LXD Advisory is not a law firm
@@ -807,34 +1020,24 @@
         <a href="/terms-of-service.html" style="color:#00d4ff; text-decoration:none;">Terms of Service</a> and
         <a href="/privacy-policy.html" style="color:#00d4ff; text-decoration:none;">Privacy Policy</a>.
     </div>
-
     <p style="margin-top:30px; font-size:.9rem; color:#555;">
         August 2, 2026 enforcement deadline &middot; <span id="footer-days">0</span> days remaining
     </p>
 </footer>
 
-<!-- ════════════════════════════════════════════
-     JAVASCRIPT — Live countdown (no Cloudflare email obfuscation)
-════════════════════════════════════════════ -->
 <script>
 (function() {
     function updateCountdown() {
         var deadline = new Date('2026-08-02T00:00:00Z');
         var now      = new Date();
         var days     = Math.max(0, Math.ceil((deadline - now) / (1000 * 60 * 60 * 24)));
-
         var els = ['countdown', 'footer-days', 'days-top'];
         els.forEach(function(id) {
             var el = document.getElementById(id);
             if (!el) return;
-            if (id === 'countdown') {
-                el.textContent = days + ' DAYS';
-            } else {
-                el.textContent = days;
-            }
+            el.textContent = id === 'countdown' ? days + ' DAYS' : days;
         });
     }
-
     updateCountdown();
     setInterval(updateCountdown, 60000);
 })();
