@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Article 4 AI Literacy Workshop · LXD Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ede8df;
+  --navy: #0f1f3d;
+  --ink: #1a1a2e;
+  --accent: #c8401a;
+  --accent2: #1a6bc8;
+  --gold: #b8860b;
+  --text: #2a2a3e;
+  --muted: #6b6b7a;
+  --border: #d4cfc4;
+  --white: #fdfaf5;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* LANGUAGE TOGGLE */
+.lang-bar {
+  background: var(--navy);
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lang-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 14px;
+  color: var(--bg);
+  letter-spacing: 0.05em;
+}
+.lang-toggle {
+  display: flex;
+  gap: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 2px;
+}
+.lang-btn {
+  padding: 4px 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+}
+.lang-btn.active {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* HERO */
+.hero {
+  padding: 80px 40px 60px;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.3;
+}
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* PRICE BADGE */
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.price-badge {
+  background: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+.price-badge span {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-top: 2px;
+}
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--white);
+}
+.meta-pill::before { content: '·'; color: var(--accent); font-size: 16px; }
+
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.cta-btn:hover { background: #a33315; transform: translateY(-1px); }
+
+/* DIVIDER */
+.rule { border: none; border-top: 1px solid var(--border); margin: 0 40px; }
+
+/* PROBLEM SECTION */
+.section { max-width: 860px; margin: 0 auto; padding: 60px 40px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.problem-quote {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--navy);
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  background: var(--white);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.body-text {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* OUTCOMES */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 32px;
+}
+.outcome-item {
+  background: var(--white);
+  padding: 20px 24px;
+  position: relative;
+}
+.outcome-item::before {
+  content: attr(data-num);
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--border);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  line-height: 1;
+}
+.outcome-arrow {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.outcome-text {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+/* DESIGN SECTION */
+.design-block {
+  background: var(--navy);
+  color: var(--white);
+  padding: 60px 40px;
+}
+.design-inner { max-width: 860px; margin: 0 auto; }
+.design-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 24px;
+}
+.design-title {
+  font-family: 'Fraunces', serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  line-height: 1.2;
+}
+.design-title em { font-style: italic; color: rgba(200,240,96,0.8); }
+
+.steps { display: flex; flex-direction: column; gap: 2px; }
+.step {
+  display: flex;
+  gap: 24px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.04);
+  border-left: 2px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+}
+.step:hover { background: rgba(255,255,255,0.07); border-left-color: rgba(200,240,96,0.5); }
+.step-num {
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.2);
+  flex-shrink: 0;
+  width: 32px;
+  line-height: 1;
+  padding-top: 2px;
+}
+.step-content {}
+.step-heading {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.step-body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+/* FORMAT */
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 32px;
+}
+.format-item {
+  background: rgba(255,255,255,0.06);
+  padding: 20px 20px;
+  text-align: center;
+}
+.format-value {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: rgba(200,240,96,0.9);
+  margin-bottom: 4px;
+}
+.format-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* CERTIFICATE */
+.cert-section { max-width: 860px; margin: 0 auto; padding: 60px 40px; }
+.cert-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  padding: 32px;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+.cert-icon {
+  font-size: 48px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.cert-title {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.cert-body {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* FOOTER */
+.page-footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+.page-footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+/* LANG HIDE */
+[data-en] { display: block; }
+[data-de] { display: none; }
+body.de [data-en] { display: none; }
+body.de [data-de] { display: block; }
+span[data-en], span[data-de] { display: inline; }
+body.de span[data-en] { display: none; }
+body.de span[data-de] { display: inline; }
+
+@media (max-width: 600px) {
+  .outcomes-grid { grid-template-columns: 1fr; }
+  .format-grid { grid-template-columns: 1fr; }
+  .hero { padding: 40px 20px 40px; }
+  .section { padding: 40px 20px; }
+  .cert-box { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <div class="lang-logo">LXD Advisory</div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">
+    <span data-en>EU AI Act · Article 4 Workshop</span>
+    <span data-de>EU KI-Gesetz · Artikel 4 Workshop</span>
+  </div>
+  <h1 class="hero-title">
+    <span data-en>AI Literacy<br>that holds up<br><em>under audit.</em></span>
+    <span data-de>KI-Kompetenz,<br>die der Prüfung<br><em>standhält.</em></span>
+  </h1>
+  <p class="hero-sub" data-en>
+    A 90-minute live workshop for ADAS engineering teams. Built around how engineers actually learn — not how compliance teams prefer to deliver it.
+  </p>
+  <p class="hero-sub" data-de>
+    Ein 90-minütiger Live-Workshop für ADAS-Engineering-Teams. Entwickelt nach dem Prinzip, wie Ingenieure wirklich lernen — nicht wie Compliance-Teams es bevorzugen zu vermitteln.
+  </p>
+
+  <div class="price-row">
+    <div class="price-badge">
+      €199
+      <span data-en>per seat</span>
+      <span data-de>pro Teilnehmer</span>
+    </div>
+    <div class="meta-pill" data-en>90 minutes · Live on Zoom</div>
+    <div class="meta-pill" data-de>90 Minuten · Live auf Zoom</div>
+    <div class="meta-pill" data-en>Max 12 participants</div>
+    <div class="meta-pill" data-de>Max. 12 Teilnehmer</div>
+    <div class="meta-pill" data-en>Certificate included</div>
+    <div class="meta-pill" data-de>Zertifikat inklusive</div>
+  </div>
+
+  <a href="mailto:hello@keithan.eu?subject=Article 4 Workshop" class="cta-btn">
+    <span data-en>Reserve a seat →</span>
+    <span data-de>Platz reservieren →</span>
+  </a>
+</div>
+
+<hr class="rule">
+
+<!-- PROBLEM -->
+<div class="section">
+  <div class="section-label" data-en>The Problem</div>
+  <div class="section-label" data-de>Das Problem</div>
+
+  <blockquote class="problem-quote" data-en>
+    "Most Article 4 compliance training is a slide deck and a quiz. Engineers sit through it. Tick a box. Move on."
+  </blockquote>
+  <blockquote class="problem-quote" data-de>
+    „Die meisten Artikel-4-Schulungen bestehen aus einer Präsentation und einem Quiz. Ingenieure sitzen sie ab. Häkchen setzen. Weitermachen."
+  </blockquote>
+
+  <p class="body-text" data-en>
+    Six months later, an auditor asks for evidence of documented competence — and the slide deck doesn't cut it. Article 4 of the EU AI Act requires providers of high-risk AI systems to ensure their staff have the AI literacy needed to do their job compliantly. That's not a box to tick. It's a documented competence trail.
+  </p>
+  <p class="body-text" data-de>
+    Sechs Monate später fragt ein Prüfer nach Nachweisen dokumentierter Kompetenz — und die Präsentation reicht nicht aus. Artikel 4 des EU-KI-Gesetzes verpflichtet Anbieter von Hochrisiko-KI-Systemen sicherzustellen, dass ihre Mitarbeiter über die KI-Kompetenz verfügen, die sie für eine konforme Arbeit benötigen. Das ist kein Häkchen. Das ist ein dokumentierter Kompetenznachweis.
+  </p>
+
+  <p class="body-text" data-en>
+    This workshop gives your team exactly that — and gives them something more useful than a certificate: the ability to actually apply Article 4 to their work.
+  </p>
+  <p class="body-text" data-de>
+    Dieser Workshop gibt Ihrem Team genau das — und etwas Nützlicheres als ein Zertifikat: die Fähigkeit, Artikel 4 tatsächlich auf ihre Arbeit anzuwenden.
+  </p>
+</div>
+
+<hr class="rule">
+
+<!-- OUTCOMES -->
+<div class="section">
+  <div class="section-label" data-en>What You Leave With</div>
+  <div class="section-label" data-de>Was Sie mitnehmen</div>
+
+  <div class="section-title" data-en>Four outcomes. Documented.</div>
+  <div class="section-title" data-de>Vier Ergebnisse. Dokumentiert.</div>
+
+  <div class="outcomes-grid">
+    <div class="outcome-item" data-num="01">
+      <div class="outcome-arrow" data-en>→ Scope clarity</div>
+      <div class="outcome-arrow" data-de>→ Geltungsbereich</div>
+      <div class="outcome-text" data-en>You can accurately identify which members of your team are in scope under Article 4 — and explain why.</div>
+      <div class="outcome-text" data-de>Sie können genau bestimmen, welche Teammitglieder unter Artikel 4 fallen — und warum.</div>
+    </div>
+    <div class="outcome-item" data-num="02">
+      <div class="outcome-arrow" data-en>→ Role definition</div>
+      <div class="outcome-arrow" data-de>→ Rollendefinition</div>
+      <div class="outcome-text" data-en>You can describe what "documented competence" means for three different engineering roles in your organisation.</div>
+      <div class="outcome-text" data-de>Sie können beschreiben, was „dokumentierte Kompetenz" für drei verschiedene Engineering-Rollen in Ihrer Organisation bedeutet.</div>
+    </div>
+    <div class="outcome-item" data-num="03">
+      <div class="outcome-arrow" data-en>→ Audit readiness</div>
+      <div class="outcome-arrow" data-de>→ Prüfungsbereitschaft</div>
+      <div class="outcome-text" data-en>You can audit your current training against the 5 components of a compliant AI literacy trail.</div>
+      <div class="outcome-text" data-de>Sie können Ihre aktuelle Schulung gegen die 5 Komponenten eines konformen KI-Kompetenz-Nachweises prüfen.</div>
+    </div>
+    <div class="outcome-item" data-num="04">
+      <div class="outcome-arrow" data-en>→ Gap analysis</div>
+      <div class="outcome-arrow" data-de>→ Lückenanalyse</div>
+      <div class="outcome-text" data-en>You leave with a completed gap analysis for your own team — not a generic checklist.</div>
+      <div class="outcome-text" data-de>Sie verlassen den Workshop mit einer abgeschlossenen Lückenanalyse für Ihr eigenes Team — keine generische Checkliste.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DESIGN -->
+<div class="design-block">
+  <div class="design-inner">
+    <div class="design-label" data-en>Workshop Design</div>
+    <div class="design-label" data-de>Workshop-Konzept</div>
+    <h2 class="design-title">
+      <span data-en>Built around how engineers <em>actually learn.</em></span>
+      <span data-de>Entwickelt für das, wie Ingenieure <em>wirklich lernen.</em></span>
+    </h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-heading" data-en>Real scenario first</div>
+          <div class="step-heading" data-de>Zuerst das reale Szenario</div>
+          <div class="step-body" data-en>Each module opens with a real scenario — a validation engineer, a specific ADAS system, a compliance decision they have to make. You work through it before the regulation is explained.</div>
+          <div class="step-body" data-de>Jedes Modul beginnt mit einem realen Szenario — ein Validierungsingenieur, ein spezifisches ADAS-System, eine Compliance-Entscheidung. Sie arbeiten es durch, bevor die Regulierung erklärt wird.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-heading" data-en>Why before what</div>
+          <div class="step-heading" data-de>Warum vor Was</div>
+          <div class="step-body" data-en>Understanding why a rule exists changes how you apply it. The regulatory context follows the scenario — not the other way around.</div>
+          <div class="step-body" data-de>Das Verständnis, warum eine Regel existiert, verändert, wie man sie anwendet. Der regulatorische Kontext folgt dem Szenario — nicht umgekehrt.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-heading" data-en>Applied to your work</div>
+          <div class="step-heading" data-de>Auf Ihre Arbeit angewendet</div>
+          <div class="step-body" data-en>By the end of 90 minutes, you won't just know what Article 4 requires. You'll have applied it to situations that look like your work.</div>
+          <div class="step-body" data-de>Nach 90 Minuten werden Sie nicht nur wissen, was Artikel 4 fordert. Sie werden es auf Situationen angewendet haben, die wie Ihre eigene Arbeit aussehen.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-heading" data-en>Working session, not a webinar</div>
+          <div class="step-heading" data-de>Arbeitssitzung, kein Webinar</div>
+          <div class="step-body" data-en>Max 12 participants. Everyone works. No passive viewing. This is designed for teams who need to be able to act on what they learn — not just recall it.</div>
+          <div class="step-body" data-de>Max. 12 Teilnehmer. Alle arbeiten aktiv. Kein passives Zuschauen. Konzipiert für Teams, die das Gelernte anwenden müssen — nicht nur abrufen.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="format-grid">
+      <div class="format-item">
+        <div class="format-value">90'</div>
+        <div class="format-label" data-en>Duration</div>
+        <div class="format-label" data-de>Dauer</div>
+      </div>
+      <div class="format-item">
+        <div class="format-value">12</div>
+        <div class="format-label" data-en>Max. participants</div>
+        <div class="format-label" data-de>Max. Teilnehmer</div>
+      </div>
+      <div class="format-item">
+        <div class="format-value">€199</div>
+        <div class="format-label" data-en>Per seat</div>
+        <div class="format-label" data-de>Pro Platz</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTIFICATE -->
+<div class="cert-section">
+  <div class="cert-box">
+    <div class="cert-icon">📋</div>
+    <div>
+      <div class="cert-title" data-en>Certificate of Completion</div>
+      <div class="cert-title" data-de>Abschlusszertifikat</div>
+      <p class="cert-body" data-en>
+        Every attendee receives a named certificate of completion — built for compliance folders, not LinkedIn profiles. The certificate documents the specific Article 4 competencies addressed, the date, the facilitator, and the participant's role. It is designed to satisfy an auditor's request for documented competence evidence.
+      </p>
+      <p class="cert-body" data-de>
+        Jeder Teilnehmer erhält ein namentliches Abschlusszertifikat — konzipiert für Compliance-Ordner, nicht für LinkedIn-Profile. Das Zertifikat dokumentiert die spezifischen Artikel-4-Kompetenzen, das Datum, den Facilitator und die Rolle des Teilnehmers. Es ist so gestaltet, dass es die Anforderungen eines Prüfers an dokumentierte Kompetenznachweise erfüllt.
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; text-align: center;">
+    <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;" data-en>Ready to book for your team? Get in touch.</p>
+    <p style="font-size: 12px; color: var(--muted); margin-bottom: 16px;" data-de>Bereit, für Ihr Team zu buchen? Kontaktieren Sie uns.</p>
+    <a href="mailto:hello@keithan.eu?subject=Article 4 Workshop" class="cta-btn">
+      <span data-en>hello@keithan.eu →</span>
+      <span data-de>hello@keithan.eu →</span>
+    </a>
+  </div>
+</div>
+
+<div class="page-footer">
+  <span>LXD Advisory · <a href="mailto:hello@keithan.eu">hello@keithan.eu</a> · lxdadvisory.de</span>
+  <span data-en>EU AI Act Article 4 · AI Literacy Workshop</span>
+  <span data-de>EU-KI-Gesetz Artikel 4 · KI-Kompetenz-Workshop</span>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('de', lang === 'de');
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
