@@ -3,1032 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LXD Advisory — EU AI Act Article 12/19 Compliance Production Sprints</title>
+<title>LXD Advisory — Learning experience design by Keithan Cokbilir</title>
+<meta name="description" content="Freelance learning experience design from Ingolstadt: e-learning and blended programmes, practical AI workshops for teams, and English for professionals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-        background-color: #0a0d12;
-        color: #e0e0e0;
-        line-height: 1.6;
-        background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
-        background-size: 40px 40px;
-    }
-
-    /* ── URGENCY BAR ── */
-    .urgency-bar {
-        background: linear-gradient(90deg, rgba(239,68,68,.2) 0%, rgba(239,68,68,.4) 50%, rgba(239,68,68,.2) 100%);
-        border-bottom: 1px solid rgba(239,68,68,.3);
-        color: #fca5a5;
-        text-align: center;
-        padding: 10px 20px;
-        font-family: 'Courier New', monospace;
-        font-weight: 700;
-        font-size: .85rem;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(10px);
-        letter-spacing: .15em;
-    }
-
-    /* ── HERO ── */
-    header {
-        background: linear-gradient(135deg, #0a1628 0%, #0d1117 100%);
-        padding: 100px 20px 80px;
-        text-align: center;
-        border-bottom: 2px solid #00d4ff;
-        position: relative;
-    }
-
-    header h1 {
-        font-size: clamp(2rem, 6vw, 3.8rem);
-        margin-bottom: 1.5rem;
-        font-weight: 700;
-        letter-spacing: -.02em;
-        color: #fff;
-        line-height: 1.1;
-    }
-
-    header h1 .highlight {
-        color: #00d4ff;
-        display: block;
-        margin-top: .8rem;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        margin-bottom: 1rem;
-        color: #fca5a5;
-        font-weight: 600;
-        letter-spacing: .05em;
-    }
-
-    header p {
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-        margin-bottom: 1.5rem;
-        max-width: 850px;
-        margin-left: auto;
-        margin-right: auto;
-        color: #c0c0c0;
-    }
-
-    .hero-stats {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        margin: 40px 0 50px;
-    }
-
-    .stat { text-align: center; }
-
-    .stat-number {
-        font-size: 3rem;
-        font-weight: 800;
-        color: #00d4ff;
-        display: block;
-        font-family: 'Courier New', monospace;
-    }
-
-    .stat-label {
-        font-size: .9rem;
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: .1em;
-    }
-
-    .cta-primary {
-        display: inline-block;
-        padding: 20px 45px;
-        background: linear-gradient(135deg, #00d4ff, #0066ff);
-        color: #fff;
-        font-weight: 700;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: .3s;
-        margin: 10px;
-        font-size: 1.05rem;
-        box-shadow: 0 4px 20px rgba(0,212,255,.3);
-        text-transform: uppercase;
-        letter-spacing: .05em;
-    }
-
-    .cta-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 30px rgba(0,212,255,.5);
-    }
-
-    .cta-secondary {
-        display: inline-block;
-        padding: 20px 45px;
-        background: transparent;
-        color: #00d4ff;
-        border: 2px solid #00d4ff;
-        font-weight: 700;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: .3s;
-        margin: 10px;
-        font-size: 1.05rem;
-        text-transform: uppercase;
-        letter-spacing: .05em;
-    }
-
-    .cta-secondary:hover { background: rgba(0,212,255,.1); }
-
-    /* ── SECTIONS ── */
-    section {
-        padding: 80px 20px;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    h2 {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        color: #00d4ff;
-        margin-bottom: 2rem;
-        text-align: center;
-        font-weight: 700;
-        letter-spacing: -.01em;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-        color: #fff;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        max-width: 850px;
-        margin: 0 auto 1.5rem;
-        color: #c0c0c0;
-        text-align: center;
-        font-size: 1.05rem;
-    }
-
-    /* ── PROBLEM ── */
-    .problem-section {
-        background: #0d1117;
-        border-top: 1px solid rgba(255,255,255,.1);
-        border-bottom: 1px solid rgba(255,255,255,.1);
-    }
-
-    .problem-section p { font-size: 1.15rem; line-height: 1.8; }
-    .problem-section strong { color: #00d4ff; }
-
-    /* ── DELIVERABLES ── */
-    .deliverable-box {
-        background: #141920;
-        border-left: 4px solid #00d4ff;
-        padding: 40px;
-        margin: 50px auto;
-        max-width: 800px;
-        text-align: left;
-    }
-
-    .deliverable-box h3 { text-align: left; margin-bottom: 25px; color: #00d4ff; }
-    .deliverable-box ul { list-style: none; padding: 0; }
-
-    .deliverable-box li {
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-        font-family: 'Courier New', monospace;
-        font-size: .95rem;
-        color: #b8b8b8;
-    }
-
-    .deliverable-box li:last-child { border-bottom: none; }
-
-    .deliverable-box li::before {
-        content: "→ ";
-        color: #00d4ff;
-        font-weight: bold;
-        margin-right: 10px;
-    }
-
-    /* ── SPRINT GRID ── */
-    .sprint-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 50px;
-    }
-
-    .sprint-card {
-        background: #141920;
-        border: 1px solid rgba(255,255,255,.08);
-        border-radius: 8px;
-        padding: 40px 30px;
-        text-align: left;
-        transition: .3s;
-    }
-
-    .sprint-card:hover {
-        border-color: #00d4ff;
-        transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0,212,255,.15);
-    }
-
-    .sprint-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
-    .sprint-card h3 { text-align: left; font-size: 1.4rem; margin-bottom: 1rem; }
-    .sprint-card p  { text-align: left; font-size: 1rem; margin: 0; line-height: 1.7; }
-
-    /* ── TESTIMONIALS ── */
-    .testimonial {
-        background: #141920;
-        border-left: 4px solid #00d4ff;
-        padding: 40px 50px;
-        margin: 40px auto;
-        max-width: 850px;
-        font-style: italic;
-        position: relative;
-    }
-
-    .testimonial::before {
-        content: '"';
-        font-size: 5rem;
-        color: rgba(0,212,255,.15);
-        position: absolute;
-        top: 20px; left: 20px;
-        font-family: Georgia, serif;
-    }
-
-    .testimonial p {
-        text-align: left;
-        margin-bottom: 20px;
-        padding-left: 40px;
-        font-size: 1.1rem;
-        color: #e0e0e0;
-    }
-
-    .testimonial-author {
-        text-align: right;
-        font-size: .95rem;
-        color: #888;
-        font-style: normal;
-        padding-right: 10px;
-    }
-
-    .testimonial-author strong { color: #00d4ff; }
-
-    /* ── FREE TOOLS GRID ── */
-    .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 28px;
-        margin-top: 50px;
-    }
-
-    .tool-card {
-        background: #141920;
-        border: 1px solid rgba(255,255,255,.08);
-        border-radius: 8px;
-        padding: 35px;
-        text-align: center;
-        transition: .3s;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tool-card:hover {
-        border-color: rgba(0,212,255,.4);
-        transform: translateY(-3px);
-    }
-
-    .tool-card.playbook-card {
-        border-color: rgba(0,212,255,.3);
-        background: linear-gradient(145deg, #141920 0%, #0f1a24 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .tool-card.playbook-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #00d4ff, #0066ff, #00d4ff);
-    }
-
-    .tool-card.playbook-card:hover {
-        border-color: #00d4ff;
-        box-shadow: 0 8px 40px rgba(0,212,255,.2);
-    }
-
-    .badge {
-        display: inline-block;
-        background: rgba(0,212,255,.15);
-        border: 1px solid rgba(0,212,255,.3);
-        color: #00d4ff;
-        padding: 6px 14px;
-        border-radius: 4px;
-        font-size: .75rem;
-        font-family: 'Courier New', monospace;
-        letter-spacing: .08em;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-
-    .badge-playbook {
-        background: rgba(245,158,11,.15);
-        border: 1px solid rgba(245,158,11,.4);
-        color: #f59e0b;
-    }
-
-    .badge-workshop {
-        background: rgba(167,139,250,.15);
-        border: 1px solid rgba(167,139,250,.4);
-        color: #a78bfa;
-    }
-
-    .tool-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-align: center; }
-
-    .tool-card p {
-        font-size: .95rem;
-        text-align: center;
-        margin-bottom: 25px;
-        color: #b8b8b8;
-        flex: 1;
-    }
-
-    .tool-card a.tool-link {
-        display: inline-block;
-        padding: 14px 28px;
-        background: rgba(0,212,255,.1);
-        border: 1px solid #00d4ff;
-        color: #00d4ff;
-        border-radius: 6px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: .3s;
-        font-size: .95rem;
-        width: 100%;
-        text-align: center;
-    }
-
-    .tool-card a.tool-link:hover { background: rgba(0,212,255,.2); }
-
-    .playbook-ctas {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: auto;
-    }
-
-    .btn-playbook-free {
-        display: block;
-        padding: 13px 20px;
-        background: rgba(0,212,255,.1);
-        border: 1px solid #00d4ff;
-        color: #00d4ff;
-        border-radius: 6px;
-        font-weight: 600;
-        text-decoration: none;
-        text-align: center;
-        font-size: .92rem;
-        transition: .3s;
-        cursor: pointer;
-        font-family: inherit;
-    }
-
-    .btn-playbook-free:hover { background: rgba(0,212,255,.2); }
-
-    .btn-playbook-premium {
-        display: block;
-        padding: 13px 20px;
-        background: linear-gradient(135deg, #f59e0b, #d97706);
-        border: none;
-        color: #fff;
-        border-radius: 6px;
-        font-weight: 700;
-        text-decoration: none;
-        text-align: center;
-        font-size: .92rem;
-        transition: .3s;
-        box-shadow: 0 2px 12px rgba(245,158,11,.25);
-    }
-
-    .btn-playbook-premium:hover {
-        background: linear-gradient(135deg, #d97706, #b45309);
-        box-shadow: 0 4px 20px rgba(245,158,11,.4);
-        transform: translateY(-1px);
-    }
-
-    .playbook-features {
-        list-style: none;
-        width: 100%;
-        margin-bottom: 22px;
-        text-align: left;
-    }
-
-    .playbook-features li {
-        font-size: .84rem;
-        color: #8899aa;
-        padding: 5px 0;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .playbook-features li:last-child { border-bottom: none; }
-
-    .playbook-features li::before {
-        content: '→';
-        color: #00d4ff;
-        flex-shrink: 0;
-        font-weight: bold;
-    }
-
-    /* ══════════════════════════════════════
-       WORKSHOP SECTION — new styles
-    ══════════════════════════════════════ */
-    .workshop-outer {
-        background: #0d1117;
-        border-top: 1px solid rgba(255,255,255,.06);
-        border-bottom: 1px solid rgba(255,255,255,.06);
-        padding: 80px 20px;
-    }
-
-    .workshop-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .workshop-card {
-        background: linear-gradient(145deg, #141920 0%, #0f1624 100%);
-        border: 1px solid rgba(167,139,250,.25);
-        border-radius: 10px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .workshop-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #a78bfa, #7c3aed, #a78bfa);
-    }
-
-    .workshop-header {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 32px;
-        align-items: center;
-        padding: 44px 48px 32px;
-        border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .workshop-eyebrow {
-        font-family: 'Courier New', monospace;
-        font-size: .75rem;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: #a78bfa;
-        margin-bottom: 12px;
-    }
-
-    .workshop-title {
-        font-size: clamp(1.5rem, 3vw, 2rem);
-        font-weight: 700;
-        color: #fff;
-        line-height: 1.15;
-        margin-bottom: 10px;
-    }
-
-    .workshop-title em {
-        font-style: italic;
-        color: #a78bfa;
-    }
-
-    .workshop-subtitle {
-        font-size: .95rem;
-        color: #8899aa;
-        line-height: 1.7;
-        text-align: left;
-        margin: 0;
-        max-width: 580px;
-    }
-
-    .workshop-price-block { text-align: right; flex-shrink: 0; }
-
-    .workshop-price {
-        font-size: 3.2rem;
-        font-weight: 800;
-        color: #a78bfa;
-        font-family: 'Courier New', monospace;
-        line-height: 1;
-    }
-
-    .workshop-price-label {
-        font-size: .75rem;
-        color: #556;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        margin-top: 4px;
-        font-family: 'Courier New', monospace;
-    }
-
-    .workshop-body { padding: 36px 48px 44px; }
-
-    .workshop-meta {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-bottom: 32px;
-    }
-
-    .workshop-pill {
-        padding: 5px 14px;
-        border: 1px solid rgba(167,139,250,.3);
-        border-radius: 20px;
-        font-size: .78rem;
-        color: #a78bfa;
-        font-family: 'Courier New', monospace;
-        letter-spacing: .05em;
-        background: rgba(167,139,250,.08);
-    }
-
-    .workshop-outcomes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2px;
-        margin-bottom: 36px;
-    }
-
-    .workshop-outcome {
-        background: rgba(255,255,255,.03);
-        padding: 18px 20px;
-        border-left: 2px solid rgba(167,139,250,.3);
-        transition: .2s;
-    }
-
-    .workshop-outcome:hover {
-        background: rgba(167,139,250,.06);
-        border-left-color: #a78bfa;
-    }
-
-    .outcome-tag {
-        font-family: 'Courier New', monospace;
-        font-size: .7rem;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        color: #a78bfa;
-        margin-bottom: 6px;
-        font-weight: 700;
-    }
-
-    .outcome-desc {
-        font-size: .88rem;
-        color: #9aacbc;
-        line-height: 1.55;
-    }
-
-    .workshop-footer-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-        padding-top: 28px;
-        border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-    .workshop-cert {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: .85rem;
-        color: #667;
-        flex: 1;
-    }
-
-    .workshop-cert-icon { font-size: 1.3rem; }
-
-    .workshop-ctas {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .btn-workshop-learn {
-        display: inline-block;
-        padding: 12px 24px;
-        background: transparent;
-        border: 1px solid rgba(167,139,250,.5);
-        color: #a78bfa;
-        border-radius: 6px;
-        font-weight: 600;
-        text-decoration: none;
-        font-size: .9rem;
-        transition: .3s;
-        white-space: nowrap;
-    }
-
-    .btn-workshop-learn:hover {
-        background: rgba(167,139,250,.1);
-        border-color: #a78bfa;
-    }
-
-    .btn-workshop-book {
-        display: inline-block;
-        padding: 12px 28px;
-        background: linear-gradient(135deg, #a78bfa, #7c3aed);
-        color: #fff;
-        border-radius: 6px;
-        font-weight: 700;
-        text-decoration: none;
-        font-size: .9rem;
-        transition: .3s;
-        box-shadow: 0 2px 16px rgba(167,139,250,.25);
-        white-space: nowrap;
-    }
-
-    .btn-workshop-book:hover {
-        background: linear-gradient(135deg, #7c3aed, #6d28d9);
-        box-shadow: 0 4px 24px rgba(167,139,250,.4);
-        transform: translateY(-1px);
-    }
-
-    /* ── URGENCY SECTION ── */
-    .urgency-section {
-        background: rgba(239,68,68,.08);
-        border: 1px solid rgba(239,68,68,.2);
-        border-radius: 8px;
-        padding: 50px 40px;
-        margin: 60px auto;
-        max-width: 900px;
-        text-align: center;
-    }
-
-    .urgency-section h3 { color: #fca5a5; margin-bottom: 20px; text-align: center; font-size: 1.8rem; }
-    .urgency-section p  { color: #d0d0d0; font-size: 1.1rem; }
-
-    .countdown {
-        font-size: 4rem;
-        font-weight: 800;
-        color: #ef4444;
-        margin: 30px 0;
-        font-family: 'Courier New', monospace;
-        text-shadow: 0 0 20px rgba(239,68,68,.3);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-        background: #0a0a14;
-        text-align: center;
-        padding: 60px 20px 40px;
-        border-top: 1px solid rgba(255,255,255,.05);
-    }
-
-    .footer-links { margin: 30px 0; }
-
-    .footer-links a {
-        color: #888;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: .9rem;
-        transition: .3s;
-        letter-spacing: .05em;
-    }
-
-    .footer-links a:hover { color: #00d4ff; }
-
-    .disclaimer {
-        max-width: 950px;
-        margin: 40px auto 20px;
-        padding: 30px;
-        background: rgba(255,255,255,.02);
-        border: 1px solid rgba(255,255,255,.06);
-        border-radius: 6px;
-        font-size: .85rem;
-        line-height: 1.7;
-        color: #777;
-        text-align: left;
-    }
-
-    .disclaimer strong { color: #00d4ff; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-        header h1 { font-size: 2rem; }
-        .hero-stats { flex-direction: column; gap: 20px; }
-        .stat-number { font-size: 2.5rem; }
-        .cta-primary, .cta-secondary {
-            display: block;
-            margin: 15px auto;
-            max-width: 320px;
-        }
-        .urgency-bar { font-size: .7rem; padding: 8px 10px; }
-        .disclaimer { font-size: .75rem; padding: 20px; }
-        .tools-grid { grid-template-columns: 1fr; }
-        .workshop-header { grid-template-columns: 1fr; gap: 16px; }
-        .workshop-price-block { text-align: left; }
-        .workshop-outcomes { grid-template-columns: 1fr; }
-        .workshop-header, .workshop-body { padding: 28px 24px; }
-        .workshop-footer-row { flex-direction: column; align-items: flex-start; }
-    }
+:root{
+  --paper:#EEF1EC;
+  --paper-2:#E3E8E1;
+  --ink:#18233A;
+  --ink-soft:#4A556B;
+  --marker:#2F6F5E;
+  --highlight:#F2D16B;
+  --rule:#C5CDC4;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Source Serif 4',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--marker);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+.nav{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.brand{font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.01em}
+.nav ul{list-style:none;display:flex;gap:28px;font-family:var(--display);font-size:.95rem}
+.nav a{text-decoration:none;color:var(--ink-soft)}
+.nav a:hover{color:var(--ink)}
+
+.hero{padding:72px 0 88px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,6.2vw,4.75rem);line-height:1.02;letter-spacing:-.035em;max-width:15ch}
+.hero .lede{margin-top:28px;max-width:58ch;font-size:1.25rem;color:var(--ink-soft)}
+.actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:1rem;padding:14px 24px;border-radius:999px;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--marker);border-color:var(--marker)}
+.btn.ghost:hover{background:var(--paper-2)}
+
+.map{margin-top:80px}
+.map-caption{font-family:var(--display);font-size:.95rem;color:var(--ink-soft);margin-bottom:22px}
+.track{position:relative}
+.track::before{content:"";position:absolute;left:24px;width:75%;top:22px;height:3px;background:var(--marker);transform-origin:left;transform:scaleX(0);animation:draw 1.6s .3s ease-out forwards}
+@keyframes draw{to{transform:scaleX(1)}}
+.track ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.track li{padding-right:24px}
+.dot{position:relative;width:48px;height:48px;border-radius:50%;background:var(--paper);border:3px solid var(--marker);display:grid;place-items:center;font-family:var(--display);font-weight:800;color:var(--marker)}
+.track li:last-child .dot{background:var(--highlight);border-color:var(--ink);color:var(--ink)}
+.track h3{font-family:var(--display);font-weight:600;font-size:1.15rem;margin:18px 0 6px;letter-spacing:-.01em}
+.track p{font-size:1rem;color:var(--ink-soft);line-height:1.55;max-width:24ch}
+
+section{padding:88px 0;border-top:1px solid var(--rule)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-.03em;line-height:1.1;max-width:22ch}
+.intro{margin-top:16px;max-width:60ch;color:var(--ink-soft)}
+
+.services{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.services h3{font-family:var(--display);font-weight:600;font-size:1.3rem;letter-spacing:-.015em;line-height:1.25;padding-top:18px;border-top:3px solid var(--ink)}
+.services p{margin-top:12px;color:var(--ink-soft);font-size:1.05rem}
+.services ul{margin-top:16px;list-style:none;font-size:1rem}
+.services li{padding:6px 0;border-bottom:1px solid var(--rule)}
+
+.work{margin-top:40px;list-style:none}
+.work li{border-bottom:1px solid var(--rule)}
+.work a{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:32px;align-items:baseline;padding:30px 0;text-decoration:none}
+.work a:hover .w-name{text-decoration:underline;text-decoration-color:var(--highlight);text-decoration-thickness:6px;text-underline-offset:-2px;text-decoration-skip-ink:none}
+.w-title{font-family:var(--display);font-weight:600;font-size:1.4rem;letter-spacing:-.02em;line-height:1.2}
+.w-topic{display:block;font-weight:400;font-size:.95rem;color:var(--marker);margin-top:6px;letter-spacing:0}
+.w-desc{color:var(--ink-soft);font-size:1.05rem}
+.w-go{font-family:var(--display);font-weight:600;font-size:.95rem;white-space:nowrap}
+.note{margin-top:22px;font-size:.98rem;color:var(--ink-soft);font-style:italic;max-width:62ch}
+
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px;margin-top:40px}
+.about p+p{margin-top:18px}
+.facts{list-style:none;font-size:1rem}
+.facts li{padding:14px 0;border-bottom:1px solid var(--rule)}
+.facts strong{display:block;font-family:var(--display);font-weight:600;font-size:.95rem}
+
+.contact{background:var(--ink);color:var(--paper);border-top:none}
+.contact h2{color:var(--paper)}
+.contact .intro{color:#B9C3D4}
+.contact .btn{border-color:var(--paper)}
+.contact .btn.primary{background:var(--highlight);color:var(--ink);border-color:var(--highlight)}
+.contact .btn.primary:hover{background:var(--paper);border-color:var(--paper)}
+.contact .btn.ghost{color:var(--paper)}
+.contact .btn.ghost:hover{background:#26344F}
+.contact a:focus-visible{outline-color:var(--highlight)}
+
+footer{background:var(--ink);color:#8C97AB;font-family:var(--display);font-size:.9rem;padding:0 0 40px}
+footer .wrap > div{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid #2C3A55;padding-top:24px}
+footer nav{display:flex;gap:22px}
+footer a{color:#B9C3D4;text-decoration:none}
+footer a:hover{color:var(--paper)}
+
+@media (max-width:860px){
+  .services{grid-template-columns:1fr;gap:40px}
+  .work a{grid-template-columns:1fr;gap:10px}
+  .about{grid-template-columns:1fr;gap:40px}
+  .track ol{grid-template-columns:1fr 1fr;row-gap:36px}
+  .track::before{display:none}
+}
+@media (max-width:560px){
+  .nav ul{display:none}
+  .hero{padding:40px 0 64px}
+  section{padding:64px 0}
+  .track ol{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .track::before{animation:none;transform:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-    &#x26A0; EU AI ACT ENFORCEMENT: AUGUST 2, 2026 &mdash; <span id="days-top">0</span> DAYS REMAINING
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="/">LXD Advisory</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Learning that changes what people do on Monday morning.</h1>
+    <p class="lede">I'm Keithan Cokbilir, a freelance learning experience designer in Ingolstadt. I design e-learning, blended programmes and hands-on workshops for teams — starting from the behaviour you need, not the content you have.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:hello@keithan.eu?subject=Project%20enquiry">Tell me about your project</a>
+      <a class="btn ghost" href="#work">See design work</a>
+    </div>
+
+    <div class="map">
+      <p class="map-caption">How every project runs</p>
+      <div class="track">
+        <ol>
+          <li><div class="dot">1</div><h3>Find the gap</h3><p>What should people do differently — and is training really the fix?</p></li>
+          <li><div class="dot">2</div><h3>Map the actions</h3><p>The few decisions and tasks that matter on the job.</p></li>
+          <li><div class="dot">3</div><h3>Prototype early</h3><p>Working interactive drafts you can click through, not storyboards.</p></li>
+          <li><div class="dot">4</div><h3>Measure the change</h3><p>A baseline before day one and a check at day 30.</p></li>
+        </ol>
+      </div>
+    </div>
+  </header>
 </div>
 
-<!-- HERO -->
-<header>
-    <h1>
-        We Don't Train Teams on the AI Act.
-        <span class="highlight">We Run Production Sprints That Generate It.</span>
-    </h1>
-    <p class="hero-subtitle">For ADAS Engineering Teams at OEMs and Tier-1 Suppliers</p>
-    <p>Your team generates JSON schemas and Technical Files for EU AI Act Articles 12 &amp; 19 in 21 days.
-    Not slide decks. Not homework. Production artifacts that integrate directly into your CI/CD pipeline.</p>
-    <div class="hero-stats">
-        <div class="stat">
-            <span class="stat-number">21</span>
-            <span class="stat-label">Day Sprint</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">0</span>
-            <span class="stat-label">R&amp;D Delay</span>
-        </div>
-        <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Artifacts</span>
-        </div>
-    </div>
-    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
-    <a class="cta-secondary" href="/pricing_page.html">View Pricing &amp; Details</a>
-</header>
-
-<!-- THE PROBLEM -->
-<section class="problem-section">
-    <h2>The Compliance Infrastructure Gap</h2>
-    <p>Most ADAS infrastructure teams think they're compliant because they "have logs."</p>
-    <p>But Article 12 doesn't ask if you log data. It asks: <strong>"Show me your logging schema that maps to Article 12 requirements."</strong></p>
-    <p>That schema doesn't exist.</p>
-    <p>Your infrastructure team is waiting for ADAS to define it. ADAS is waiting for compliance to define it. Compliance is waiting for legal. Legal is waiting for IT.</p>
-    <p><strong>Nobody's building it. The gap won't close itself. The August 2026 deadline will not move.</strong></p>
-</section>
-
-<!-- WHAT GETS BUILT -->
-<section>
-    <h2>What Gets Generated in 21 Days</h2>
-    <p>This isn't training. It's a <strong>Production Sprint</strong> where your ADAS team generates version-controlled
-    code artifacts your systems consume programmatically.</p>
-    <div class="deliverable-box">
-        <h3>Production Artifacts (Version-Controlled)</h3>
+<section id="services">
+  <div class="wrap">
+    <h2>What I can design for you</h2>
+    <p class="intro">For L&amp;D teams, e-learning agencies and training providers who need an extra designer — for one module or a whole programme.</p>
+    <div class="services">
+      <div>
+        <h3>E-learning and blended programmes</h3>
+        <p>From needs analysis to finished, tested material — built around realistic decisions rather than slides of content.</p>
         <ul>
-            <li>logging_schema_v1.0.json &mdash; Article 12-compliant, machine-readable</li>
-            <li>article_12_technical_file.xml &mdash; EU-required format, auto-generated</li>
-            <li>esim_configuration.yaml &mdash; Infrastructure-as-Code for eSIM/ACSP</li>
-            <li>compliance_validator.py &mdash; Automated pre-deployment checks</li>
-            <li>human_oversight_protocol.json &mdash; Article 14 procedures as config</li>
-            <li>audit_defense_brief.md &mdash; Auto-generated from schema annotations</li>
+          <li>Scenario-based e-learning</li>
+          <li>Role-based learning journeys</li>
+          <li>Facilitator guides and job aids</li>
+          <li>Measurement plans</li>
         </ul>
+      </div>
+      <div>
+        <h3>Practical AI workshops for teams</h3>
+        <p>Hands-on sessions where people use AI tools on their own everyday work, with clear guidance on what not to share.</p>
+        <ul>
+          <li>Half-day and full-day formats</li>
+          <li>Tailored to each team's tasks</li>
+          <li>Follow-up prompts and cheat sheets</li>
+          <li>Attendance records if you need them</li>
+        </ul>
+      </div>
+      <div>
+        <h3>English for professionals</h3>
+        <p>Native-speaker training for people who present, negotiate and write in English — grounded in years of executive coaching.</p>
+        <ul>
+          <li>Presentations and meetings</li>
+          <li>Executive communication coaching</li>
+          <li>Business writing</li>
+          <li>Small groups or one-to-one</li>
+        </ul>
+      </div>
     </div>
-    <p style="margin-top:40px; font-size:1.1rem;">These integrate directly into your CI/CD pipeline. When your ADAS model version increments, your schemas update automatically.</p>
-    <div style="text-align:center; margin-top:50px;">
-        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener">Book Architecture Jam &rarr;</a>
-    </div>
+  </div>
 </section>
 
-<!-- 21-DAY PROCESS -->
-<section style="background:#0d1117; max-width:100%; padding:80px 20px;">
-    <div style="max-width:1200px; margin:auto;">
-        <h2>The 21-Day Production Sprint</h2>
-        <p>Three half-day sessions across three weeks. Your team produces artifacts during sessions &mdash; not as homework after.</p>
-        <div class="sprint-grid">
-            <div class="sprint-card">
-                <span class="sprint-icon">&#x1F4D0;</span>
-                <h3>Week 1: Schema Generation</h3>
-                <p>Your ADAS team generates baseline JSON schema for Article 12. Define data types, field mappings, retention policies as code. Initialize Technical File structure in your repo.</p>
-            </div>
-            <div class="sprint-card">
-                <span class="sprint-icon">&#x1F527;</span>
-                <h3>Week 2: Validation &amp; Refinement</h3>
-                <p>Iterate schema based on mock audit feedback. Add validation rules. Generate Article 19 log control policies as configuration. Build automated compliance checks.</p>
-            </div>
-            <div class="sprint-card">
-                <span class="sprint-icon">&#x1F680;</span>
-                <h3>Week 3: CI/CD Integration</h3>
-                <p>Integrate schemas into deployment pipeline. Configure eSIM/ACSP to consume schemas programmatically. Generate Technical Files automatically from schema annotations.</p>
-            </div>
-        </div>
-    </div>
+<section id="work">
+  <div class="wrap">
+    <h2>Design work</h2>
+    <p class="intro">Three full programme designs with working interactive artefacts — learning journeys, simulations, scoreboards, job aids and measurement plans.</p>
+    <ul class="work">
+      <li><a href="https://keithan-c.github.io/LXD-Portfolio/governance/index.html">
+        <span class="w-title"><span class="w-name">VeriTech Group data governance programme</span><span class="w-topic">Corporate L&amp;D, role clarity</span></span>
+        <span class="w-desc">Three role-based journeys for new data roles, with a pre-session card sort and a cross-role simulation where each role holds different information.</span>
+        <span class="w-go">View case study</span>
+      </a></li>
+      <li><a href="https://keithan-c.github.io/LXD-Portfolio/revenue-cup/index.html">
+        <span class="w-title"><span class="w-name">The Revenue Cup</span><span class="w-topic">Gamification, data literacy</span></span>
+        <span class="w-desc">A four-week team challenge that surfaces commercial ideas from frontline experts, with Power BI introduced only once people have a question to answer.</span>
+        <span class="w-go">View case study</span>
+      </a></li>
+      <li><a href="https://keithan-c.github.io/LXD-Portfolio/intelligence-sprint/index.html">
+        <span class="w-title"><span class="w-name">The Intelligence Sprint</span><span class="w-topic">Technical teams, knowledge transfer</span></span>
+        <span class="w-desc">A structured sprint that helps engineers turn field observations into briefs product managers can act on, supported by a point-of-need job aid.</span>
+        <span class="w-go">View case study</span>
+      </a></li>
+    </ul>
+    <p class="note">These are concept projects — fully designed with working artefacts, not yet delivered for a client.</p>
+  </div>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section>
-    <h2>What Engineering Heads Say</h2>
-    <div class="testimonial">
-        <p>LXD Advisory didn't just train our team &mdash; they built the methodology we now use across our entire ADAS portfolio.
-        Three weeks to audit-ready documentation. We expected a course. We got a capability.</p>
-        <div class="testimonial-author">&mdash; <strong>VP Engineering</strong>, Tier-1 Automotive Supplier, Germany</div>
+<section id="about">
+  <div class="wrap">
+    <h2>About Keithan</h2>
+    <div class="about">
+      <div>
+        <p>I've spent more than ten years helping adults learn at work: teaching Business English at Inlingua in Ingolstadt, then coaching executives on communication in China from 2022 to 2025.</p>
+        <p>Today I design learning experiences that start with a performance problem. I use AI tools throughout my own process — for rapid prototyping, scenario writing and building interactive artefacts — which is also what I teach teams to do.</p>
+      </div>
+      <ul class="facts">
+        <li><strong>Training</strong>Learning Experience Design, York University; Adult Learning &amp; e-Learning, University of Calgary</li>
+        <li><strong>Languages</strong>English (native), German (B1), French (beginner)</li>
+        <li><strong>Based in</strong>Ingolstadt — on site in Ingolstadt and Munich, remote anywhere</li>
+      </ul>
     </div>
-    <div class="testimonial">
-        <p>We had ASPICE L3 in place but no idea how it mapped to the AI Act. The mapping engagement showed us we were 60% there already.
-        We built only the delta. Saved us months.</p>
-        <div class="testimonial-author">&mdash; <strong>Chief Architect</strong>, Automotive AI Startup, Munich</div>
-    </div>
+  </div>
 </section>
 
-<!-- ════════════════════════════════════════════
-     ARTICLE 4 WORKSHOP — NEW SECTION
-════════════════════════════════════════════ -->
-<div class="workshop-outer">
-    <div class="workshop-inner">
-        <h2 style="color:#a78bfa; margin-bottom:.75rem;">Article 4 AI Literacy Workshop</h2>
-        <p style="margin-bottom:40px; color:#8899aa;">Before your team can build compliant systems, they need documented AI literacy. Article 4 requires it. An auditor will ask for it.</p>
-
-        <div class="workshop-card">
-            <div class="workshop-header">
-                <div>
-                    <div class="workshop-eyebrow">EU AI Act &middot; Article 4 &middot; Live Workshop</div>
-                    <h3 class="workshop-title">AI Literacy that holds up<br><em>under audit.</em></h3>
-                    <p class="workshop-subtitle">A 90-minute live working session for ADAS engineering teams. Built around how engineers actually learn &mdash; not how compliance teams prefer to deliver it. Every attendee leaves with a completed gap analysis, not a generic checklist.</p>
-                </div>
-                <div class="workshop-price-block">
-                    <div class="workshop-price">€199</div>
-                    <div class="workshop-price-label">per seat</div>
-                </div>
-            </div>
-
-            <div class="workshop-body">
-                <div class="workshop-meta">
-                    <span class="workshop-pill">90 minutes &middot; Live on Zoom</span>
-                    <span class="workshop-pill">Max 12 participants</span>
-                    <span class="workshop-pill">Working session &mdash; not a webinar</span>
-                    <span class="workshop-pill">Certificate included</span>
-                </div>
-
-                <div class="workshop-outcomes">
-                    <div class="workshop-outcome">
-                        <div class="outcome-tag">→ Scope clarity</div>
-                        <div class="outcome-desc">Identify which team members are in scope under Article 4 &mdash; and explain why to an auditor.</div>
-                    </div>
-                    <div class="workshop-outcome">
-                        <div class="outcome-tag">→ Documented competence</div>
-                        <div class="outcome-desc">Define what Article 4 compliance looks like for three specific engineering roles in your organisation.</div>
-                    </div>
-                    <div class="workshop-outcome">
-                        <div class="outcome-tag">→ Audit-ready trail</div>
-                        <div class="outcome-desc">Audit your current training against the 5 components of a compliant AI literacy trail.</div>
-                    </div>
-                    <div class="workshop-outcome">
-                        <div class="outcome-tag">→ Gap analysis</div>
-                        <div class="outcome-desc">Leave with a completed gap analysis for your team &mdash; not a generic checklist you'll file and forget.</div>
-                    </div>
-                </div>
-
-                <div class="workshop-footer-row">
-                    <div class="workshop-cert">
-                        <span class="workshop-cert-icon">📋</span>
-                        <span>Named certificate of completion &mdash; built for compliance folders, not LinkedIn profiles. Designed to satisfy an auditor's request for documented competence evidence.</span>
-                    </div>
-                    <div class="workshop-ctas">
-                        <a href="/workshop-page.html" class="btn-workshop-learn">Learn more &rarr;</a>
-                        <a href="/cdn-cgi/l/email-protection#6e060b0202012e050b071a060f00400b1b511d1b0c040b0d1a532f1c1a070d020b4e5a4e39011c051d06011e" class="btn-workshop-book">Reserve a seat &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Have a project, or need an extra designer?</h2>
+    <p class="intro">Send a few lines about your audience, your timeline and what people should be able to do afterwards. I'll reply within two working days.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:hello@keithan.eu?subject=Project%20enquiry">Email hello@keithan.eu</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
-</div>
-<!-- /WORKSHOP SECTION -->
-
-<!-- FREE TOOLS & RESOURCES -->
-<section id="tools" style="background:#0d1117; max-width:100%; padding:80px 20px;">
-    <div style="max-width:1200px; margin:auto;">
-        <h2>Free Tools &amp; Resources</h2>
-        <p>Prove to yourself we understand the technical depth before booking anything.</p>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <div class="badge">Interactive Tool</div>
-                <h3>Article 12/19 Readiness Scorecard</h3>
-                <p>10-question diagnostic for OTA infrastructure teams. Instant score, gap analysis, recommended action plan. 3 minutes.</p>
-                <a href="https://keithan-c.github.io/scorecard/" target="_blank" rel="noopener" class="tool-link">Take the Scorecard &rarr;</a>
-            </div>
-            <div class="tool-card">
-                <div class="badge">Living Checklist</div>
-                <h3>46-Item Compliance Tracker</h3>
-                <p>Interactive checklist for infrastructure and ADAS teams. Progress saves automatically. Flag blockers. Export status.</p>
-                <a href="https://keithan-c.github.io/ai-act-article-12-19-checklist/" target="_blank" rel="noopener" class="tool-link">Access Checklist &rarr;</a>
-            </div>
-            <div class="tool-card">
-                <div class="badge">GitHub Template</div>
-                <h3>ADAS Logging Schema</h3>
-                <p>Article 12-compliant logging schema template. Maps each data field to specific compliance requirements. Fork and customize.</p>
-                <a href="https://github.com/Keithan-C/adas-logging-schema-template" target="_blank" rel="noopener" class="tool-link">View on GitHub &rarr;</a>
-            </div>
-            <div class="tool-card playbook-card" style="grid-column: 1 / -1;">
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; justify-content:center;">
-                    <div class="badge badge-playbook">New &mdash; Free + Premium</div>
-                    <div class="badge">Interactive Playbook</div>
-                </div>
-                <h3 style="font-size:1.5rem; margin-bottom:10px;">AI Governance Playbook for ADAS Teams</h3>
-                <p style="max-width:720px; margin-bottom:20px; font-size:1rem; color:#aab8c8;">
-                    A complete EU AI Act compliance framework for ADAS engineering teams &mdash;
-                    from risk classification to governance checkpoints.
-                    Covers Articles 9&ndash;15, Annex IV Technical File requirements,
-                    the documentation gap most teams discover late, and a full RACI matrix.
-                    Free to read online. Premium templates available.
-                </p>
-                <ul class="playbook-features" style="max-width:720px; margin-bottom:24px;">
-                    <li>Risk classification table for 8 ADAS components (pedestrian detection, DMS, AEB, LKA&hellip;)</li>
-                    <li>Split-screen gap analysis: What teams have vs. what homologation asks for</li>
-                    <li>Interactive governance checkpoints across 5 development stages</li>
-                    <li>Full RACI matrix: 10 compliance activities &times; 7 engineering roles</li>
-                    <li>Premium: Annex IV JSON schema, Art. 12 logging implementation, CI/CD validator configs</li>
-                </ul>
-                <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; width:100%; max-width:520px;">
-                    <a href="https://keithan-c.github.io/Playbook/" class="btn-playbook-free" target="_blank" rel="noopener" style="flex:1; min-width:200px;">
-                        &#x1F4D6; Read Free Playbook &rarr;
-                    </a>
-                    <a href="https://buy.stripe.com/3cIdRbdwsfNmfsD1dX87K00" class="btn-playbook-premium" target="_blank" rel="noopener" style="flex:1; min-width:200px;">
-                        &#x1F512; Unlock Premium &rarr;
-                    </a>
-                </div>
-                <p style="font-size:.78rem; color:#556; margin-top:14px; text-align:center;">
-                    Free edition includes all 6 sections &middot; Premium adds production-ready JSON schemas &amp; CI/CD configs
-                </p>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- URGENCY -->
-<section>
-    <div class="urgency-section">
-        <h3>The Window Is Closing</h3>
-        <div class="countdown" id="countdown">0 DAYS</div>
-        <p>A 21-day sprint started today finishes in three weeks. That leaves months to scale to other teams and
-        complete documentation across your systems portfolio.</p>
-        <p style="margin-top:20px;"><strong>Teams that started in Q4 2025 are finishing their first pilots now. Everyone else is behind.</strong></p>
-        <p style="margin-top:20px; font-size:1rem; color:#888;">The margin is gone. The window to debate has closed.</p>
-        <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener" style="margin-top:35px;">Book Your Sprint Slot &rarr;</a>
-    </div>
-</section>
-
-<!-- FINAL CTA -->
-<section style="text-align:center; padding:100px 20px;">
-    <h2>Book an Architecture Jam</h2>
-    <p>30-minute session for Engineering Heads and Chief Architects at OEMs and Tier-1 suppliers.</p>
-    <p>We map your AI systems against Articles 12, 14, and 19 &mdash; and show you exactly where the gaps are.</p>
-    <p style="font-weight:600; color:#00d4ff; margin-top:30px;">No deck. No sales pitch. Just architecture.</p>
-    <a class="cta-primary" href="https://calendly.com/hello-keithan/calendly-com-keithan-audit-gap" target="_blank" rel="noopener" style="font-size:1.15rem; padding:22px 50px; margin-top:40px;">Book Architecture Jam &rarr;</a>
-    <p style="margin-top:20px;">
-        <a href="/pricing_page.html" style="color:#00d4ff; text-decoration:none; font-weight:600;">View Pricing &amp; Sprint Details &rarr;</a>
-    </p>
-    <p style="margin-top:30px; font-size:1rem; color:#888;">
-        Or email: <a href="/cdn-cgi/l/email-protection#cea6aba2a2a18ea5aba7baa6afa0e0abbb" style="color:#00d4ff; text-decoration:none;"><span class="__cf_email__" data-cfemail="1b737e7777745b707e726f737a75357e6e">[email&#160;protected]</span></a>
-    </p>
-</section>
-
-<!-- FOOTER -->
 <footer>
-    <p style="font-size:1.1rem; margin-bottom:10px;">&copy; 2026 LXD Advisory</p>
-    <p style="font-size:.95rem; color:#666; margin-bottom:30px;">EU AI Act Article 12 &amp; 19 Compliance Methodology for Automotive R&amp;D Teams</p>
-    <div class="footer-links">
-        <a href="https://www.linkedin.com/in/keithan-cokbilir-b929a830" target="_blank" rel="noopener">LINKEDIN</a>
-        <a href="https://github.com/Keithan-C" target="_blank" rel="noopener">GITHUB</a>
-        <a href="/cdn-cgi/l/email-protection#fe969b929291be959b978a969f90d09b8b">EMAIL</a>
+  <div class="wrap">
+    <div>
+      <span>© 2026 LXD Advisory, Keithan Cokbilir</span>
+      <nav aria-label="Legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
     </div>
-    <div class="footer-links" style="margin-top:15px;">
-        <a href="/pricing_page.html">PRICING</a>
-        <a href="/impressum.html">IMPRESSUM</a>
-        <a href="/privacy-policy.html">PRIVACY POLICY</a>
-        <a href="/terms-of-service.html">TERMS OF SERVICE</a>
-    </div>
-    <div class="disclaimer">
-        <strong>LEGAL DISCLAIMER:</strong> The information provided on this website is for general informational purposes
-        only and does not constitute legal, regulatory, or professional compliance advice. LXD Advisory is not a law firm
-        and does not provide legal services. Our services relate to compliance methodology, technical implementation, and
-        engineering best practices. For specific legal or regulatory compliance questions, consult a qualified attorney or
-        regulatory expert in your jurisdiction. We do not certify, audit, or guarantee regulatory compliance outcomes.
-        Final compliance determination rests with regulatory authorities and your legal counsel. Services are provided
-        "as is" without warranties of any kind. LXD Advisory's maximum liability shall not exceed fees paid for services
-        rendered. For complete terms, see our
-        <a href="/terms-of-service.html" style="color:#00d4ff; text-decoration:none;">Terms of Service</a> and
-        <a href="/privacy-policy.html" style="color:#00d4ff; text-decoration:none;">Privacy Policy</a>.
-    </div>
-    <p style="margin-top:30px; font-size:.9rem; color:#555;">
-        August 2, 2026 enforcement deadline &middot; <span id="footer-days">0</span> days remaining
-    </p>
+  </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-(function() {
-    function updateCountdown() {
-        var deadline = new Date('2026-08-02T00:00:00Z');
-        var now      = new Date();
-        var days     = Math.max(0, Math.ceil((deadline - now) / (1000 * 60 * 60 * 24)));
-        var els = ['
+</body>
+</html>
